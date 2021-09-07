@@ -1,6 +1,6 @@
 # GoAlgorithm
 
-![license](https://img.shields.io/github/license/bellshade/javaAlgorithm?style=for-the-badge)
+![license](https://img.shields.io/github/license/bellshade/GoAlgorithm?style=for-the-badge)
 
 Repositori ini berisi kumpulan dari berbagai macam contoh struktur data, algoritma dan komputasi matematika yang diimplementasikan dengan menggunakan bahasa pemrograman Go.
 
