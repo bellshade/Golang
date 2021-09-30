@@ -13,4 +13,3 @@ jobs:
         with:
           version: latest
           args: -E gofmt
-      - run: go test ./...
