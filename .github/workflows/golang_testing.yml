@@ -1,7 +1,7 @@
-name: golang testing
+name: golang_lint_dan_test
 on: [push, pull_request]
 jobs:
-  golang_testing:
+  golang_lint_dan_test:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -13,4 +13,4 @@ jobs:
         with:
           version: latest
           args: -E gofmt
-      - run: go test ./..
+      - run: go test ./...
