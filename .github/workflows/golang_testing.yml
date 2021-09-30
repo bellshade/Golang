@@ -1,15 +1,19 @@
-name: golang_lint_dan_test
-on: [push, pull_request]
+name: golangci-lint
+on:
+  push:
+    tags:
+      - v*
+    branches:
+      - main
+  pull_request:
 jobs:
-  golang_lint_dan_test:
+  golangci:
+    name: lint
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-go@v2
-      - run: go version
-      - uses: golangci/golangci-lint-action@v2
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
         with:
-          version: latest
-          args: -E gofmt
+          version: v1.29
+
