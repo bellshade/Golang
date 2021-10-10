@@ -16,11 +16,17 @@ func main() {
 	var nama string = "Manusia"
 	fmt.Println(nama)
 
-//	2 (dynamic type)
+//	2 (shorthand) -> cara membuat variable dengan cara yang lebih singkat
 	alamat := "Bumi"
 	fmt.Println(alamat)
 
 //	3 (static type)
+	// zeros value, adalah nilai default dari tipe data yang digunakan dalam golang,
+	// nilai ini akan digunakan jika variable tidak diberikan nilai awal, contoh
+	// int -> 0
+	// float -> 0.0
+	// bool -> false
+	// string -> ""
 	var jenisKelamin string
 	fmt.Println(jenisKelamin) // ini akan berisi string kosong
 	jenisKelamin = "laki - laki"
