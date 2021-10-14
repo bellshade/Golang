@@ -13,7 +13,7 @@ func main() {
 	// Kode dibawah ini merupakan perintah untuk menampilkan sebuah tulisan ke Stdout,
 	// apakah itu Stdout? Stdout atau yang berkepanjangan Standard Output secara singkat
 	// adalah tempat keluaran/output dari suatu perintah sebagai contoh perintah di baris nomor 20.
-	// Lalu dimanakah output yang di maksud? Output yang di maksud adalah program/aplikasi berbasis
+	// Lalu dimanakah output yang dimaksud? Output yang di maksud adalah program/aplikasi berbasis
 	// command line atau dikenal dengan istilah terminal dan mungkin istilah lain yang tidak asing yaitu
 	// Command Prompt/CMD. Untuk menjalankan perintah yang di maksud kita perlu melakukan
 	// sebuah aksi KOMPILASI di terminal atau CMD untuk menjalankan keseluruhan program ini.
@@ -23,10 +23,10 @@ func main() {
 	// CMD akan menampilkan sebuah tulisan yaitu Hello world.
 
 	// Apakah hanya Hello world yang bisa ditampilkan? Tentu tidak, jikalau ingin menampilkan yang
-	// lain, kita bisa menuliskan kata atau kalimat di dalam nya sebagai contoh dibawah ini.
+	// lain, kita bisa menuliskan kata atau kalimat di dalam nya sebagai contoh di bawah ini.
 	fmt.Println("Welcome to Bellshade")
 
-	// Syarat yang perlu di ingat adalah kata atau kalimat yang di deklarasi wajib berada di antara tanda petik dua.
+	// Syarat yang perlu diingat adalah kata atau kalimat yang dideklarasi wajib berada di antara tanda petik dua.
 
 	// Happy learning see you next lesson!
 }
