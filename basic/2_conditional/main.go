@@ -7,18 +7,18 @@ func main() {
 	 * Percabangan dengan if else Dasar
 	 */
 
-	// Deklarasi Variable
+	// Deklarasi Variabel
 	numChild := 5
 
-	if numChild > 2 { // numChild > 2 merupakan condition statement
+	if numChild > 2 { // numChild > 2 merupakan conditional statement
 		/**
-		 * Baris ini hanya akan di eksekusi ketika condition statement terpenuhi
+		 * Baris ini hanya akan dieksekusi ketika conditional statement terpenuhi
 		 * atau menghasilkan nilai true
 		 */
 		fmt.Println("Banyak anak banyak rejeki")
 	} else {
 		/**
-		 * Baris ini dijalankan ketika condition statement tidak terpenuhi
+		 * Baris ini dijalankan ketika conditional statement tidak terpenuhi
 		 * atau menghasilkan nilai false
 		 */
 		fmt.Println("Dua anak cukup")
@@ -28,7 +28,7 @@ func main() {
 	 * Percabangan dengan Temporary Variable
 	 */
 	if numChild2 := 5; numChild2 > 3 {
-		// numChild2 hanya dapat digunakan pada blok kode if else, diluar itu maka akan error
+		// numChild2 hanya dapat digunakan pada blok kode if else, jika di luar itu maka akan error
 		fmt.Println(numChild2)
 		fmt.Println("Lebih dari 3")
 	} else {
@@ -47,7 +47,7 @@ func main() {
 	 */
 
 	// Switch case dasar
-	switch numChild { // numChild ada sebuah nilai yang akan dicocokkan dengan case-case yang ada di dalam switch statement
+	switch numChild { // numChild adalah sebuah nilai yang akan dicocokkan dengan case-case yang ada di dalam switch statement
 	case 5:
 		fmt.Println("Switch case 5") // jika numChild bernilai 5, maka akan mengeksekusi kode tersebut
 	case 3:
@@ -57,7 +57,7 @@ func main() {
 	}
 
 	// Switch case seperti if else
-	// Agar dapat menggunakan pengecekan kondisi seperti di percabangan if else, maka tidak perlu memberikan variabel atau nilai setelah statement `switch`
+	// Agar dapat menggunakan pengecekan kondisi seperti pada percabangan if else, maka tidak perlu memberikan variabel atau nilai setelah statement `switch`
 	// Jika setelah statement `switch` tidak ada nilai yang akan dicek, maka kita dapat menggunakan pengecekan kondisi seperti di bawah ini pada setiap statement `case`
 	switch {
 	case numChild == 5:
