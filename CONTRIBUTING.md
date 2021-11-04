@@ -137,9 +137,9 @@ git commit -m "add: menambahkan algoritma baru"
 **Saran Pesan Commit:**
 
 - `add` Untuk menambah algoritma atau tambahan lainnya
-- `fix` Untuk mengubah algoritma yang sudah ada atau memperbaiki
-- `docs` Untuk mengubah atau membuat dokumentasi
-- `style` Untuk mengubah atau memperbaiki style kode untuk contohnya bisa dilihat pada commit yang diatas
+- `fix`: Untuk mengubah algoritma yang sudah ada atau memperbaiki
+- `docs:` Untuk mengubah atau membuat dokumentasi
+- `style:` Untuk mengubah atau memperbaiki style kode untuk contohnya bisa dilihat pada commit yang diatas
 
 **_Pull Request_ `merged` jika:**
 
