@@ -5,13 +5,12 @@
 - [Kategori yang tersedia](#kategori-yang-tersedia)
   - [Basic](#pembelajaran-dasar-basic-learning)
   - [Algoritma](#algoritma-algorithm)
-  - [Utility](#komponen-fungsi-kegunaan-utilities)
+  - [Utility](#komponenfungsi-kegunaan-utilities)
 - [Standar Penulisan](#standar-penulisan)
-  - [Tentang gaya PSR-12](#gaya-penulisan-psr12)
   - [Pedoman penulisan untuk basic](#pedoman-penulisan-lainnya-untuk-pembelajaran-dasar-basic-learning)
   - [Pedoman penulisan untuk utility](#pedoman-penulisan-lainnya-untuk-fungsi-kegunaan-utilities)
   - [Pedoman penulisan untuk algorithm](#pedoman-penulisan-lainnya-untuk-algoritma-algorithm)
-- [Unit Testing](#testing)
+- [Percobaan (_Testing_)](#percobaan-testing)
 - [Pull Request](#pull-request)
 
 ## Contributor
@@ -27,9 +26,9 @@ Kami sangat senang Anda dapat ikut berkontribusi dalam implementasi algoritma, s
 
 ### Pembelajaran Dasar (_Basic Learning_)
 
-Basic learning adalah kumpulan demonstrasi kode materi pemrograman Go beserta artikel penjelasan yang lengkap, mudah di mengerti dan menarik secara visual. Dirangkai dengan alur yang runtut mulai dasar sehingga bisa dijadikan referensi untuk kalian yang belajar pemrograman Go.
+Basic learning adalah kumpulan demonstrasi kode materi pemrograman Go beserta artikel penjelasan yang lengkap, mudah dimengerti dan menarik secara visual. Dirangkai dengan alur yang runtut mulai dasar sehingga bisa dijadikan referensi untuk kalian yang belajar pemrograman Go.
 
-Untuk berkontribusi di repositori bellshade Golang bagian Basic ini kamu harus mengikuti urutan materi yang telah ditentukan. Daftar materi yang tersedia bisa kamu jelajahi di [Issues tag materi](https://github.com/bellshade/Golang/issues). Didalam issue itu kami juga menuliskan rekomendasi tentang konten yang ada dalam materi tersebut, namun kamu masih dapat menambah materi konten jika dirasa perlu. 
+Untuk berkontribusi di repositori bellshade Golang bagian Basic ini kamu harus mengikuti urutan materi yang telah ditentukan. Daftar materi yang tersedia bisa kamu jelajahi di [issue ini](https://github.com/bellshade/Golang/issues/4). Di dalam issue itu kami juga menuliskan rekomendasi tentang konten yang ada dalam materi tersebut, namun kamu masih dapat menambah materi konten jika dirasa perlu. 
 
 Semua implementasi kode untuk Basic Learning bisa ditemukan di `/basics`  <br/>
 dengan struktur direktori sebagai berikut <br/>
@@ -50,7 +49,7 @@ dengan struktur direktori sebagai berikut <br/>
 
 ### Algoritma (_Algorithm_)
 
-Algoritma adalah langkah-langkah untuk menyelesaikan suatu pekerjaan dimana terdiri dari 3 bagian utama, yaitu:
+Algoritma adalah langkah-langkah untuk menyelesaikan suatu pekerjaan yang terdiri dari 3 bagian utama, yaitu:
 
 - Input/masukan, sebelum menjalankan sebuah algoritma maka hal yang pertama harus dilakukan adalah menerima masukan, input dapat berasal dari pengguna ataupun dari langkah sebelumnya.
 - Proses, bagian utama dari algoritma yang melakukan pengolahan input yang akan menghasilkan output.
@@ -71,10 +70,10 @@ Semua implementasi kode untuk Algorithm bisa ditemukan di `/algorithms` dengan b
 ```
 > Artikel penjelasan algoritma ditulis pada `README.md` <br/>
 
-### Komponen / Fungsi kegunaan _(Utilities)_
-Kategori utilities adalah kumpulan referensi dan contoh penggunaan komponen-komponen / fitur-fitur umum yang mungkin diperlukan oleh para web developer untuk diterapkan pada project aplikasi webnya. Didalam kategori ini, kalian dapat menjelajahi berbagai macam kebutuhan umum untuk pengembangan web umum dan mempelajari bagaimana cara mengimplementasikannya.
+### Komponen/Fungsi Kegunaan _(Utilities)_
+Kategori utilities adalah kumpulan referensi dan contoh penggunaan komponen-komponen/fitur-fitur umum yang mungkin diperlukan oleh para web developer untuk diterapkan pada project aplikasi webnya. Didalam kategori ini, kalian dapat menjelajahi berbagai macam kebutuhan umum untuk pengembangan web umum dan mempelajari bagaimana cara mengimplementasikannya.
 
-Utility ini adalah sesuatu yang bukan esensial dalam pengembangan web namun terkadang dibutuhkan. Bisa juga dibilang Utility ini adalah peralatan / komponen yang bisa melengkapi sebuah fitur dalam aplikasi berbasis web. Contohnya adalah seperti: Manipulasi Gambar, DateTime, Mencetak ke printer dot matrix dan sebagainya. 
+Utility ini adalah sesuatu yang bukan esensial dalam pengembangan web namun terkadang dibutuhkan. Bisa juga dibilang Utility ini adalah peralatan/komponen yang bisa melengkapi sebuah fitur dalam aplikasi berbasis web. Contohnya adalah seperti: Manipulasi Gambar, DateTime, Mencetak ke printer dot matrix dan sebagainya. 
 
 Semua tentang Utility dapat ditemukan pada direktori `/utilities`<br/>
 dengan bentuk struktur yang mirip dengan `algorithm`
@@ -104,8 +103,8 @@ Selain menggunakan gaya penulisan PSR-12 untuk implementasi kode pada Basic Lear
 - Setiap materi pembelajaran berada pada folder tersendiri yang dinamai dengan materi yang berkaitan
 - Folder materi memiliki penomoran diawal sebagai _prefix_
 - Artikel penjelasan ditulis di `README.md` pada setiap folder materi. jadi kamu perlu membuat `README.md`nya
-- Penamaan variabel dan fungsi menggunakan `CamelCase`
-- Penamaan File menggunakan `SnakeCase`
+- Penamaan variabel dan fungsi menggunakan `camelCase`
+- Penamaan File menggunakan `snake_case`
 
 ### Pedoman Penulisan Lainnya untuk fungsi kegunaan _(Utilities)_
 
@@ -125,20 +124,19 @@ Testing hanya dilakukan untuk Algorithm dan tidak diperlukan untuk Basic Learnin
 **_Pull Request_ yang Baik**
 
 - Lakukan fork pada repository kami
-- usahakan Anda membuat branch baru
+- Usahakan Anda membuat branch baru
 
 ```bash
 git checkout -b <branch_name>
 git add .
-git commit -m "add: menambahkan algoritma baru"
+git commit -m "feat: menambahkan algoritma baru"
 ```
 
-- Lakukan push ke branch Anda dan kemudian *open *pull request\*\*
+- Lakukan push ke branch Anda dan kemudian **_open pull request_**
 
 **Saran Pesan Commit:**
 
 - `feat:` Untuk menambahkan algoritma atau tambahan lainnya
-- `add:` Untuk menambah algoritma atau tambahan lainnya
 - `fix:` Untuk mengubah algoritma yang sudah ada atau memperbaiki
 - `docs:` Untuk mengubah atau membuat dokumentasi
 - `style:` Untuk mengubah atau memperbaiki style kode untuk contohnya bisa dilihat pada commit yang diatas
@@ -155,4 +153,4 @@ git commit -m "add: menambahkan algoritma baru"
 
 Untuk _pull request_ kami sarankan untuk menjelaskan secara detail yang Anda ubah atau tambahkan, dan bersikap sopan, serta selalu berterima kasih, itu salah satu bentuk tata krama yang baik terhadap sesama contributor dan programmer lainnya.
 
-Terima kasih sudah berkontribusi di **Bellshade/Golang**
+Terima kasih sudah berkontribusi di **Bellshade/Golang**!
