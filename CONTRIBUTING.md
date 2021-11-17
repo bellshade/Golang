@@ -104,7 +104,8 @@ Selain menggunakan gaya penulisan PSR-12 untuk implementasi kode pada Basic Lear
 - Setiap materi pembelajaran berada pada folder tersendiri yang dinamai dengan materi yang berkaitan
 - Folder materi memiliki penomoran diawal sebagai _prefix_
 - Artikel penjelasan ditulis di `README.md` pada setiap folder materi. jadi kamu perlu membuat `README.md`nya
-- Penamaan variabel dan fungsi menggunakan `snake_case`
+- Penamaan variabel dan fungsi menggunakan `CamelCase`
+- Penamaan File menggunakan `SnakeCase`
 
 ### Pedoman Penulisan Lainnya untuk fungsi kegunaan _(Utilities)_
 
@@ -136,8 +137,9 @@ git commit -m "add: menambahkan algoritma baru"
 
 **Saran Pesan Commit:**
 
-- `add` Untuk menambah algoritma atau tambahan lainnya
-- `fix`: Untuk mengubah algoritma yang sudah ada atau memperbaiki
+- `feat:` Untuk menambahkan algoritma atau tambahan lainnya
+- `add:` Untuk menambah algoritma atau tambahan lainnya
+- `fix:` Untuk mengubah algoritma yang sudah ada atau memperbaiki
 - `docs:` Untuk mengubah atau membuat dokumentasi
 - `style:` Untuk mengubah atau memperbaiki style kode untuk contohnya bisa dilihat pada commit yang diatas
 
