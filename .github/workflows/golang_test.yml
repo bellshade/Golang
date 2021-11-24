@@ -21,5 +21,8 @@ jobs:
         # testing golang package
         # sementara
       - name: test running go
-        run: go run ./...
+        run: go run basic/01_introduction/hello_world.go
+
+      # - name: test linting gofmt
+      #   run: go test ./...
 
