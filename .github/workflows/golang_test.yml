@@ -1,0 +1,25 @@
+name: golang test
+on: [push, pull_request]
+
+jobs:
+  golang_test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup go untuk testing
+        uses: actions/setup-go@v2
+
+        # testing lint untuk kedepannya
+      - name: golang ci linting
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: latest
+          args: -E gofmt
+        
+        # testing golang package
+        # sementara
+      - name: test running go
+        run: go run ./...
+
