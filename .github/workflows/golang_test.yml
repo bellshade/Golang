@@ -23,6 +23,6 @@ jobs:
       - name: test running go
         run: go run basic/01_introduction/hello_world.go
 
-      # - name: test linting gofmt
-      #   run: go test ./...
+      - name: test linting gofmt
+        run: go test ./...
 
