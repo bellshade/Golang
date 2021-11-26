@@ -53,8 +53,8 @@ tabel berikut menujukkan semua operator logika yang di dukung oleh bahasa go
 
 operator bitwise bekerja pada bit dan melakukan operasi bit demi bit. tabel untuk &, |, ^ adalah sebagai berikut
 
-| p      | q      | p & q         | ``p | q``     | p     |
-| :---:  | :---:  | :---:         | :---:         | :---: |
+| var p      | var q      | var p & q         | var ``p | q``     | var p     |
+| :---  | :---  | :---         | :---         | :--- |
 | 0      | 0      | 0             | 0             | 0     |
 | 0      | 1      | 0             | 1             | 1     |
 | 1      | 1      | 1             | 1             | 0     |
@@ -120,13 +120,11 @@ operator bitwise yang didukung oleh bahasa c tercantum dalam list berikut. asums
 ## operator penugasan
 
 | Operator      | deskripsi                             | contoh        |
+| :---          | :---:                                 | :---:         |
 | ``=``         | operator penugasan sederhana, menetapkan nilai dari operan sisi kanan ke operan sisi kiri     | C = A + B memberikan nilai A + B ke C         |
 | ``+=``        | tambahan operator penugasan DAN,ini menambahkan operan kanan ke operan kiri dan menetapkan hasilnya ke operan kiri    | C += A setara dengan C = C + A        |
 | ``-=``        | kurangi DAN operator penugasan, ini mengurangi operan kanan dari operan kiri dan menetapkan hasilnya ke operan kiri   | C -= A setara dengan C = C - A        |
 | ``*=``        | operator perkalian DAN penugasam, ini mengalikan operan kanan dengan operan kiri dan menetapkan hasilnya ke operan kiri       | c ``*=`` A setara dengan C = C - A |
 | ``/=``        | divide AND operator penugasan, ini membagi operan kiri dengan operan kanan dan menetapkan hasilnya ke operan kiri     | C /= a setara dengan C = C / A        |
 | ``%=``        | bitwise DAN operator penugasan        | C &= 2 sama dengan C = C & 2  |
-| ``^=``        | bitwise ekslusif OR dan operator penugasan    | C ^= 2 sama dengan C = C ^ 2  |
-| ``|=``        | bitwise inklusif OR dan oeprator penugasan    | C |= 2 sama dengan C = C | 2  |
-
-
+| ``^=``        | bitwise ekslusif OR dan operator penugasan    | C ^= 2 sama dengan C = C ^ 2  |P
