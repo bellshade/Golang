@@ -22,8 +22,7 @@ func main(){
   // membuat instruksi logika
   if (a && b){
     fmt.Printf("kondisi a dan b adalah benar")
-  }
-  else{
+  }else{
     fmt.Printf("tidak benar")
   }
   if(!(a && b)){
