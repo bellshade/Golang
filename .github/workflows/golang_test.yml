@@ -12,17 +12,17 @@ jobs:
         uses: actions/setup-go@v2
 
         # testing lint untuk kedepannya
-      - name: golang ci linting
-        uses: golangci/golangci-lint-action@v2
-        with:
-          version: latest
-          args: -E gofmt
+        #- name: golang ci linting
+        #uses: golangci/golangci-lint-action@v2
+        #with:
+        #version: latest
+        #args: -E gofmt
         
         # testing golang package
         # sementara
       - name: test running go
         run: go run basic/01_introduction/hello_world.go
 
-      - name: test linting gofmt
-        run: go test ./...
+          #- name: test linting gofmt
+          #  run: go test ./...
 
