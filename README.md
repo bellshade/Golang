@@ -24,7 +24,7 @@ Go (atau biasa disebut Golang) merupakan bahasa pemrograman *open source* yang d
 
 Golang adalah bahasa pemrograman prosedural yang didasari oleh bahasa C. Karena itu, kamu tidak akan menemukan konsep OOP (*Object Oriented Programming*) dalam bahasa ini serta terdapat kemiripan dengan bahasa C. Dalam segi kecepatan, Golang merupakan salah satu yang tercepat di antara bahasa lain. Saat ini, Golang adalah salah satu dari bahasa yang paling populer di antara para developer.
 
-> ### 💡 Baru belajar? Mulai dari [sini](basic/1_introduction/README.md)
+> ### 💡 Baru belajar? Mulai dari [sini](basic/01_introduction/README.md)
 > Kamu akan mempelajari dasar-dasar dari pemrograman dengan Golang
 
 Untuk mempermudah kamu dalam mempelajari Golang, kamu dapat mengikuti alur belajar berikut ini.
