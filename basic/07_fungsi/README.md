@@ -75,10 +75,10 @@ func hitung(angka1, angka2, int) int{
 }
 ```
 
-## fungsi dengan multiple return
+## Fungsi dengan multiple return
 
-Di bahasa pemprograman golang kita dapat membuat funsgi dengan nilai balik lebih dari satu. cara membuatnya hampir sama dengan funsgi
-biasa.Perbedaanya kita hanya perlu perlu menambahkan tipe data untuk return value yang kedua dan seterusnya. Untuk lebih jelasnya 
+Di bahasa pemprograman golang kita dapat membuat fungsi dengan nilai balik lebih dari satu.cara membuatnya hampir sama dengan funsgi
+biasa.Perbedaanya kita hanya perlu perlu menambahkan tipe data untuk return value yang kedua dan seterusnya.Untuk lebih jelasnya 
 berikut adalah contoh codenya.
 
 ```go
