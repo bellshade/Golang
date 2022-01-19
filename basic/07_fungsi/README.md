@@ -74,3 +74,30 @@ func hitung(angka1, angka2, int) int{
     return result
 }
 ```
+
+## Fungsi dengan multiple return
+
+Di bahasa pemprograman golang kita dapat membuat fungsi dengan nilai balik lebih dari satu.cara membuatnya hampir sama dengan funsgi
+biasa.Perbedaanya kita hanya perlu perlu menambahkan tipe data untuk return value yang kedua dan seterusnya.Untuk lebih jelasnya 
+berikut adalah contoh codenya.
+
+```go
+func hitungPersegi(sisi int) (int, int) {
+   luas := sisi * sisi
+   keliling := sisi * 4
+   return keliling, luas
+}
+```
+
+Untuk memanggil funginya kita harus membuat variabel dengan jumlah yang sama dengan jumlah return fungsinya.
+
+```go
+func main(){
+   keliling, luas := hitungPersegi()
+   fmt.Println("keliling persegi : ", keliling)
+   fmt.Println("luas persegi : ", luas)
+}
+```
+
+Di dunia go, kita nanti akan sering sekali menjumpai fungsi dengan multiple return, baik fungsi-fungsi bawaan dari go atau funsgi 
+dari library yang kita pakai.
