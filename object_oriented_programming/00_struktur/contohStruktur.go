@@ -11,8 +11,8 @@ type Motor struct {
 
 // fungsi untuk print
 func (motor Motor) tampilkan_detail() {
-  fmt.Printf("pemilik motor %s adalah %s", motor.pemilik, motor.merk)
-  fmt.Printf("dengan nomor mesin %d", motor.nomorMesin)
+  fmt.Printf("pemilik motor %s adalah %s\n", motor.merk, motor.pemilik)
+  fmt.Printf("dengan nomor mesin %d\n", motor.nomorMesin)
 }
 
 func main() {
