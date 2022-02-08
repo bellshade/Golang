@@ -11,7 +11,7 @@ struktur digunakan untuk mempresentasikan record. misalnya kita ingin melacak bu
 
 ## mendifinisikan struktur
 
-untuk mendifinisikan struktur, kita harus menggunakan pernyataan tipe dan **struct** . Pernyataan struct mendifinisikan tipe data baru, dengan banyak anggota untuk program anda. pernyataan tipe mengikat nama dengan tipe yang struct dalam kasus kita.
+untuk mendifinisikan struktur, kita harus menggunakan pernyataan tipe dan **struct** . Pernyataan struct mendifinisikan tipe data baru, dengan banyak anggota untuk program kita. pernyataan tipe mengikat nama dengan tipe yang struct dalam kasus kita.
 
 ```golang
 type tipe_struct_variabel strcut{

@@ -17,7 +17,7 @@ func main(){
 
 ## apa itu pointer
 
-pointer adalah variabel yang nilainya adalah alamat dari variabel lain, yaitu, alamat langsung dari lokasi memori. Seperti variabel atau konstanta apa pun, kita harus mendeklarasikan pointer sebelum Anda dapat menggunakannya untuk menyimpan alamat variabel apa pun.
+pointer adalah variabel yang nilainya adalah alamat dari variabel lain, yaitu, alamat langsung dari lokasi memori. Seperti variabel atau konstanta apa pun, kita harus mendeklarasikan pointer sebelum kita dapat menggunakannya untuk menyimpan alamat variabel apa pun.
 
 ```
 var nama_variable *tipe_data
@@ -57,7 +57,7 @@ func main(){
 
 ## pointer nihil pada golang
 
-Go compiler menetapkan nilai Nil ke variabel pointer jika Anda tidak memiliki alamat yang tepat untuk ditugaskan. Ini dilakukan pada saat deklarasi variabel. Pointer yang diberi nil disebut pointer nil .
+Go compiler menetapkan nilai Nil ke variabel pointer jika kita tidak memiliki alamat yang tepat untuk ditugaskan. Ini dilakukan pada saat deklarasi variabel. Pointer yang diberi nil disebut pointer nil .
 
 ```golang
 package main
@@ -69,7 +69,7 @@ func main(){
   fmt.Printf("valua dari ptr adalah: %x\n", ptr)
 }
 ```
-Pada sebagian besar sistem operasi, program tidak diizinkan untuk mengakses memori pada alamat 0 karena memori tersebut dicadangkan oleh sistem operasi. Namun, alamat memori 0 memiliki arti khusus; itu menandakan bahwa penunjuk tidak dimaksudkan untuk menunjuk ke lokasi memori yang dapat diakses. Tetapi menurut konvensi, jika sebuah pointer berisi nilai nil (nol), diasumsikan tidak menunjuk ke apa pun.
+Pada sebagian besar sistem operasi, program tidak diizinkan untuk mengakses memori pada alamat 0 karena memori tersebut dicadangkan oleh sistem operasi. Namun, alamat memori 0 memiliki arti khusus; itu menkitakan bahwa penunjuk tidak dimaksudkan untuk menunjuk ke lokasi memori yang dapat diakses. Tetapi menurut konvensi, jika sebuah pointer berisi nilai nil (nol), diasumsikan tidak menunjuk ke apa pun.
 
 untuk memeriksa pointer niil, kita dapat menggunakan pernyataan if sebagai berikut
 ```golang

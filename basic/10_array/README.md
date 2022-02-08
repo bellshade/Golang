@@ -34,7 +34,7 @@ var contoh [] float32 {20.3, 22.1, 33.5, 72.1, 60.0}
 
 ## mengakses elemen array
 
-sebuah elemen diakses dengan mengindesk nama array. ini dilakukan dengan menempatkan indeks elemen dalam tanda kurung siku setelah nama array.
+sebuah elemen diakses dengan mengindesk nama array. ini dilakukan dengan menempatkan indeks elemen dalam tkita kurung siku setelah nama array.
 
 ```golang
 float nilai = contoh[2]

@@ -1,6 +1,6 @@
 # Type casting
 
-konversi tipe adalah cara untuk megubah suatu variabel dari satu tipe data ke tipe data lainnya. Misalnya, jika anda ingin menyimpan panjang ke dalam bilangan int sederhana, anda bisa mengetikkan _type cast long to int_. anda dapat mengkonversi nilai dari satu jenis ke jenis lainnya menggunakan operator cast.
+konversi tipe adalah cara untuk megubah suatu variabel dari satu tipe data ke tipe data lainnya. Misalnya, jika kita ingin menyimpan panjang ke dalam bilangan int sederhana, kita bisa mengetikkan _type cast long to int_. kita dapat mengkonversi nilai dari satu jenis ke jenis lainnya menggunakan operator cast.
 
 ```
 tipe(ekspresi)

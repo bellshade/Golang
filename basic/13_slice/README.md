@@ -113,7 +113,7 @@ func main(){
   angka = append(angka, 2,3,4)
   printSlice(angka)
   
-  /* membuat slice angka1 dengan kapasitas ganda */
+  /* membuat slice angka1 dengan kapasitas gkita */
   angka1 := make([] int, len(angka), (cap(angka)) * 2)
 
   /* menyalin konten dari angka ke angka1 */
