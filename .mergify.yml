@@ -1,0 +1,52 @@
+pull_request_rules:
+  # membuat requirement dari automerge dengan sistem
+  # ketika workflow build passed maka akan dicentang
+  # ketika target pull request ke main maka akan dicentang
+  # ketika dikasih label 'ready-to-merge' akan dicentang
+
+  # ketika requirement telah terpenuhi maka bot akan bekerja
+  # dan pull request secara otomatis akan merge
+  - name: ci testing kalo sukses ke squash dengan label
+    conditions:
+      - check-success=golang_test 
+      - base=main
+      - label=ready-to-merge
+    actions:
+      # menambahkan komentar jika sudah di merge
+      comment:
+        message: terima kasih atas kontribusinya @{{author}}!
+      # menambahkan label jika sudah di merge
+      label:
+        add: 
+          - sudah dirieview!
+      # metode sistem dari automerge
+      merge:
+        method: squash
+
+  # membuat label dengan kondisi jika di dalam pull request
+  # terdapat file golang
+  - name: golang label
+    conditions:
+      - or:
+        - body~=(?m)^\[X\] Saya menambah algoritma terbaru.
+        - body~=(?m)^\[X\] Saya membperbaiki algoritma yang sudah ada.
+        - files~=\.go$
+    actions:
+      # menambahkan label 'golang files'
+      label:
+        add:
+          - Golang files
+
+  # membuat label dengan kondisi jika di dalam pull request
+  # terdapat file markdown
+  - name: markdown label
+    conditions:
+      - or:
+        - body~=(?m)^\[X\] Saya menambah algoritma terbaru.
+        - body~=(?m)^\[X\] Saya membperbaiki algoritma yang sudah ada.
+        - files~=\.md$
+    actions:
+      #  menambahkan label 'markdown files'
+      label:
+        add:
+          - markdown files
