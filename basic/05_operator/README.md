@@ -1,6 +1,6 @@
 # Operator
 
-Operator adalah simbol yang memberitahu compiler untuk melakukan manipulasi natematika atau logika tertentu. bahasa golang kaya akan operator bawaan dan menyediakan jenis operator
+Operator adalah simbol yang memberitahu compiler untuk melakukan manipulasi natematika atau logika tertentu. Bahasa golang kaya akan operator bawaan dan menyediakan jenis operator.
 
 - operator aritmatika
 - operator rasional
@@ -11,7 +11,7 @@ Operator adalah simbol yang memberitahu compiler untuk melakukan manipulasi nate
 
 ## operator aritmatika
 
-tabel berikut menunjukkan semua operator aritmatika yang didukung oleh bahasa go
+Tabel berikut menunjukkan semua operator aritmatika yang didukung oleh bahasa go:
 
 | operator      | keterangan                    | contoh        |
 | :---          | :---                          | :---:         |
@@ -26,7 +26,7 @@ tabel berikut menunjukkan semua operator aritmatika yang didukung oleh bahasa go
 
 ## operator relasional
 
-tabel berikut menjukkan semua operator relasional yang di dukung oleh bahasa go
+Tabel berikut menjukkan semua operator relasional yang di dukung oleh bahasa go:
 
 | Operator      | keterangan                                    | contoh        |
 | :---:         | :---                                          | :---:         |
@@ -40,7 +40,7 @@ tabel berikut menjukkan semua operator relasional yang di dukung oleh bahasa go
 
 ## operator logika
 
-tabel berikut menujukkan semua operator logika yang di dukung oleh bahasa go
+Tabel berikut menujukkan semua operator logika yang di dukung oleh bahasa go:
 
 | Operator      | keterangan                                    | contoh        |
 | :---:         | :---                                          | :---:         |
@@ -51,7 +51,7 @@ tabel berikut menujukkan semua operator logika yang di dukung oleh bahasa go
 
 ## operator bitwise
 
-operator bitwise bekerja pada bit dan melakukan operasi bit demi bit. tabel untuk &, |, ^ adalah sebagai berikut
+Operator bitwise bekerja pada bit dan melakukan operasi bit demi bit. tabel untuk &, |, ^ adalah sebagai berikut:
 
 | var p      | var q      | var p & q         | var ``p | q``     | var p     |
 | :---  | :---  | :---         | :---         | :--- |
@@ -61,7 +61,7 @@ operator bitwise bekerja pada bit dan melakukan operasi bit demi bit. tabel untu
 | 1      | 0      | 0             | 1             | 1     |
 
 
-asumsikan a = 60 dan b = 13. dalam format biner, mekera akan menjadi seperti berikut
+Asumsikan a = 60 dan b = 13. dalam format biner, mekera akan menjadi seperti berikut:
 
 ```
 a = 0011 1100
@@ -74,7 +74,7 @@ a^b = 0011 0001
 ~A = 1100 0011
 ```
 
-operator bitwise yang didukung oleh bahasa c tercantum dalam list berikut. asumsikan variabel A menampung 60 dan variabel B menampung 13
+Operator bitwise yang didukung oleh bahasa c tercantum dalam list berikut. asumsikan variabel A menampung 60 dan variabel B menampung 13.
 
 
 - ``&``

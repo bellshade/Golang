@@ -2,15 +2,15 @@
 
 Constant mengacu pada nilai tetap yang tidak dapat diubah oleh program selama esekusinya. nilai-nilai tetap ini juga disebut dengan **literal**. kostanta dapat berupa salah satu tipe data dasar seperti _konstanta integer_, _kostanta float_, _kostanta karakter_, atau _string literal_. ada juga kostanta enumerasi juga.
 
-kostanta diperlakukan seperti variabel biasa kecuali bahwa nilainya tidak dapat diubah setelah definisinya.
+Kostanta diperlakukan seperti variabel biasa kecuali bahwa nilainya tidak dapat diubah setelah definisinya.
 
 ## literal bilangan bulat
 
-literal integer dapat berupa kostante desimal, oktal atau heksadesimal. aawlan menetukan basis atau radix: ``0x`` atau ``0X`` untuk heksadesimal, 0 untuk oktal, dan tidak ada untuk desinal.
+Literal integer dapat berupa kostante desimal, oktal atau heksadesimal. awalan menentukan basis atau radix: ``0x`` atau ``0X`` untuk heksadesimal, 0 untuk oktal, dan tidak ada untuk desimal.
 
-literal integer juga dapat memiliki sufiks yang merupakan kombinasi dari U dan L, masing-masing untuk unsigned dan long. akhiran dapat berupa huruf besar atau kecil dan dapat dalam urutan apapun
+Literal integer juga dapat memiliki sufiks yang merupakan kombinasi dari U dan L, masing-masing untuk ``unsigned`` dan ``long``. akhiran dapat berupa huruf besar atau kecil dan dapat dalam urutan apapun.
 
-berikut contoh dari literal integer
+Berikut contoh dari literal integer
 ```
 212     // legal
 215U    // legal
@@ -19,7 +19,7 @@ berikut contoh dari literal integer
 032U    // ilegal: tidak bisa mengulang sufiks
 ```
 
-berikut adalah contoh lain dari berbgai jenis literal integer
+Berikut adalah contoh lain dari berbgai jenis literal integer
 
 ```
 86      // desimal
@@ -33,11 +33,11 @@ berikut adalah contoh lain dari berbgai jenis literal integer
 
 ## literal float
 
-literal float memiliki bagian bilangan bilat, titik desimal, bagian pecahan dan bagian eksponen. kita dapat mewakili literal floating point baik dalam bentuk desimal atau bentuk eksponensial.
+Literal float memiliki bagian bilangan bulat, titik desimal, bagian pecahan dan bagian eksponen. kita dapat mewakili literal floating point baik dalam bentuk desimal atau bentuk eksponensial.
 
-saat mewakili menggunakan bentuk desimalm kita harus menyertakan titik desimal, eskponen, atau keduanya dan saay mewakili menggunakan bentuk eskponensial, anda harus menyertakan bagian bilangan bulat, bagian percahan, atau keduanya. eksponen bertanda diperkenalkan oleh ``e`` atau ``E``
+Saat mewakili menggunakan bentuk desimal kita harus menyertakan titik desimal, eksponen, atau keduanya dan saat mewakili menggunakan bentuk eskponensial, anda harus menyertakan bagian bilangan bulat, bagian pecahan, atau keduanya. Eksponen bertanda diperkenalkan oleh ``e`` atau ``E``.
 
-berikut beberapa contoh literal float
+Berikut beberapa contoh literal float
 ```
 3.142152       // legal
 5125225-5L     // legal
@@ -61,7 +61,7 @@ berikut beberapa contoh literal float
 | \ooo | bilangan okal satu sampai tiga digit |
 | \xhh... | bilangan heksadesimal dari satu atau lebih digit |
 
-contoh pengunaan ``\t`` pada pogram
+Contoh pengunaan ``\t`` pada pogram
 
 ```golang
 package main
@@ -75,13 +75,13 @@ func main(){
 
 ## keyword const
 
-kita dapat menggunakan awalan cost untuk mendeklarasikan kostanta dengan tipe tertentu dengan contoh
+Kita dapat menggunakan awalan cost untuk mendeklarasikan kostanta dengan tipe tertentu dengan contoh:
 
 ```
 const nama_variabel tipe_data = value;
 ```
 
-contoh berikut penggunaan const
+Contoh berikut penggunaan const
 
 ````golang
 package main

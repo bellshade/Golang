@@ -8,28 +8,29 @@ Nama variabel dapat terdiri dari huruf, angka, dan karakter garis bawah. Itu har
 
 Definisi variabel memberi tahu kompiler di mana dan berapa banyak penyimpanan yang harus dibuat untuk variabel. Definisi variabel menentukan tipe data dan berisi daftar satu atau lebih variabel dari tipe itu sebagai berikut
 
-```
-var nama_variabel tipe_data;
+```go
+var nama_variabel tipe_data
 ```
 
-Di sini, optional_data_type adalah tipe data Go yang valid termasuk byte, int, float32, complex64, boolean atau objek yang ditentukan pengguna, dll., dan variable_list dapat terdiri dari satu atau lebih nama pengenal yang dipisahkan dengan koma. Beberapa deklarasi yang valid ditampilkan di sini.
+Pada baris kode di atas, ``tipe_data`` adalah tipe data Go yang valid termasuk byte, int, float32, complex64, boolean atau objek yang ditentukan pengguna, dll., dan variable_list dapat terdiri dari satu atau lebih nama pengenal yang dipisahkan dengan koma. Beberapa deklarasi yang valid ditampilkan di sini.
 
-```
-var angka1, angka2, angka3 int;
-var c, x byte;
-var angka4, uang float32;
-d = 32;
+```go
+var angka1, angka2, angka3 int
+var c, x byte
+var angka4, uang float32
+d := 32
 ```
 
 Variabel dapat diinisialisasi (diberi nilai awal) dalam deklarasinya. Jenis variabel secara otomatis dinilai oleh kompiler berdasarkan nilai yang diteruskan ke sana. Inisialisasi terdiri dari tanda sama dengan diikuti oleh ekspresi konstan sebagai berikut
 
-```
-nama_variabel = value;
+```go
+nama_variabel := value
 ```
 contoh
-```
+```go
 // deklarasi dari x dan angka2 adalah otomatis int
-x = 3, angka2 = 5;
+x := 3
+angka2 := 5
 ```
 
 ## deklarasi tipe statis di go
@@ -56,7 +57,7 @@ func main(){
 
 Deklarasi variabel tipe dinamis membutuhkan kompiler untuk menginterpretasikan tipe variabel berdasarkan nilai yang diteruskan ke sana. Kompiler tidak memerlukan variabel untuk memiliki tipe statis sebagai persyaratan yang diperlukan.
 
-variabel telah dideklarasikan tanpa tipe apa pun. Perhatikan, dalam kasus inferensi tipe, kami menginisialisasi variabel y dengan operator ``:=``, sedangkan x diinisialisasi menggunakan operator ``=``.
+Perhatikan kode di bawah ini, terdapat 2 jenis deklarasi variabel yaitu deklarasi dengan tipe data statis dan deklarasi secara dinamis. Perbedaannya adalah deklarasi dengan tipe data statis mengisikan nilai menggunakan operator ``=``, sedangkan deklarasi secara dinamis mengisikan nilai menggunakan ``:=``.
 
 ```golang
 package main

@@ -12,12 +12,18 @@
 
 ## Gambaran Singkat
 
-Go (atau biasa disebut Golang) merupakan bahasa pemrograman yang dikembangkan oleh Google dan dibuat dari bahasa C. Karena itu, banyak kemiripan dengan bahasa tersebut. Bagi kamu yang sudah pernah mempelajari C, Golang pasti akan terasa familier. Golang mulai dikenalkan ke publik pada tahun 2009. Jadi, bahasa ini masih terbilang *baru* untuk sebuah bahasa pemrograman.
+Go (atau biasa disebut Golang) merupakan bahasa pemrograman yang dikembangkan oleh Google dan dibuat dari bahasa C. Karena itu, banyak kemiripan dengan bahasa tersebut. Bagi kamu yang sudah pernah mempelajari C, Golang pasti akan terasa familiar. Golang mulai dikenalkan ke publik pada tahun 2009. Jadi, bahasa ini masih terbilang *baru* untuk sebuah bahasa pemrograman.
 
 Struktur dari Golang adalah sebagai berikut:
 
 ```go
 package main
+
+// import "nama package"
+// atau
+import (
+  // packages yang kamu gunakan
+)
 
 func main() {
   // kode kamu berada di sini
@@ -28,9 +34,9 @@ func main() {
 
 ### Instalasi Go
 
-Sebelum mulai belajar, pastikan kamu sudah menginstall Go di komputer kamu. Jika belum, kamu bisa mengikuti panduan berikut ini.
+Sebelum mulai belajar, pastikan kamu sudah meng-install Go di komputer kamu. Jika belum, kamu bisa mengikuti panduan berikut ini.
 
-1. Download *installer* dari [https://golang.org/doc/install](https://golang.org/doc/install). Pilih sesuai dengan OS yang kamu gunakan.
+1. Download *installer* dari [https://go.dev/dl/](https://go.dev/dl/). Pilih sesuai dengan OS yang kamu gunakan.
 2. Setelah ter-*download*, jalankan installer dengan cara sebagai berikut.
     
     #### Windows
@@ -102,6 +108,8 @@ Struktur dari bahasa Go adalah sebagai berikut:
 ```go
 package main
 
+// import "nama package"
+// atau
 import (
   // packages yang kamu gunakan
 )
@@ -176,4 +184,4 @@ Selamat! Kamu sudah berhasil menulis program pertamamu! Happy learning see you n
 **Catatan dalam penamaan file:**
 
 - Disarankan untuk memberi nama file tanpa spasi
-- Gunakan `_` atau `-` jika nama file lebih dari satu kata, misal `hello_world.cpp` atau `hello-world.cpp`
+- Gunakan `_` atau `-` jika nama file lebih dari satu kata, misal `hello_world.go` atau `hello-world.go`
