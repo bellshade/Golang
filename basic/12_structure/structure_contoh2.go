@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-type Buku struct {
+type BukuSaya struct {
 	judul   string
 	penulis string
 	id_buku int
 }
 
 func main() {
-	var Buku1 Buku
-	var Buku2 Buku
+	var Buku1 BukuSaya
+	var Buku2 BukuSaya
 
 	Buku1.judul = "harry potter - the goblet of fire"
 	Buku1.penulis = "jk rowling"
@@ -25,7 +25,7 @@ func main() {
 
 }
 
-func tampilBuku(buku Buku) {
+func tampilBuku(buku BukuSaya) {
 	fmt.Printf("judul buku %s\n", buku.judul)
 	fmt.Printf("penulis %s\n", buku.penulis)
 	fmt.Printf("id buku %d\n", buku.id_buku)
