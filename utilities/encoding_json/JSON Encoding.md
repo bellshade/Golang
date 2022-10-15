@@ -31,7 +31,7 @@ Field int `json:"-"`
 Field int `json:"-,"`
 ```
 
-Berikut contoh sederhana dari proses *marshal* `struct` ke *JSON*.
+Berikut contoh sederhana dari proses *marshal* `struct` ke *JSON* dan *unmarshal* dari *JSON* ke .
 
 ```Go
 package main
