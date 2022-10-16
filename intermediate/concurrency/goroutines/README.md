@@ -1,3 +1,15 @@
+# Councurrency
+```
+Concurrency adalah proses menjalankan beberapa komputasi secara bersamaan.
+```
+
+Analogi sederhana untuk memahami konsep *concurrency* adalah proses memasak. Misalkan, seseorang sedang memasak mi instan dengan tambahan *topping* berupa telur rebus dan sosis goreng di dalam satu kompor yang sama. Pertama, ia memanaskan air terlebih dahulu untuk merebus telur. Selagi menunggu air tersebut mendidih, ia memanaskan wajan untuk menggoreng sosis. Sembari ia menunggu wajan tersebut panas, ia membuka bungkus mi instan dan mengambil piring untuk menyajikan mi tersebut jika semua bahan sudah matang. Ternyata, wajan yang disiapkan tadi sudah siap digunakan untuk menggoreng sosis dan ia langsung menggoreng sosis. Selagi ia menunggu sosis matang, ia merebus telur karena airnya sudah mendidih. Ia kembali ke kompor yang digunakan untuk menggoreng sosis dan ia meniriskan sosis tersebut. Kemudian ia kembali ke kompor yang ia gunakan untuk merebus telur dan ia meniris telur tersebut. Tidak lupa, ia memasak mi instan dan menunggu mi tersebut matang. Terakhir, ia kumpulkan seluruh bahan dalam piring yang telah ia siapkan di awal.
+
+Proses memasak di atas divisualisasikan pada diagram berikut
+
+![councrrency_example](assets\concucrrency_example.png)
+
+Pada diagram di atas, ada beberapa proses yang diwakilkan oleh persegi panjang dengan warna *border*, yaitu proses yang berhubungan dengan Telur, Sosis, dan Mi. Dalam *concurrency*, proses-proses tersebut dikenal dengan istilah *routine*. Seluruh proses memasak tersebut dilakukan dalam satu kompor yang sama dengan asumsi kompor yang digunakan memiliki tempat memasak yang banyak. Dalam *concurrency*, tempat memasak pada kompor tersebut dikenal dengan istilah *thread*
 # Goroutine
 
 Goroutine dapat dianggap sebagai thread ringan yang memiliki eksekusi independen yang terpisah dan yang dapat dieksekusi secara bersamaan dengan goroutine lainnya. Ini adalah fungsi atau metode yang dieksekusi secara bersamaan dengan goroutine lain. Ini sepenuhnya dikelola oleh runtime GO. Golang adalah bahasa konkuren. Setiap goroutine adalah eksekusi independen. Ini adalah goroutine yang membantu mencapai konkurensi di golang
