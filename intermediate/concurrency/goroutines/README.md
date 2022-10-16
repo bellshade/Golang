@@ -100,3 +100,127 @@ func start() {
     fmt.Println("menjalankan fungsi goroutine")
 }
 ```
+## Menjalankan Beberapa Goroutine Secara Bersamaan
+Kita bisa menjalankan beberapa goroutine secara bersamaan. Perhatikan kode berikut (kode diambil dari [https://golangbot.com/goroutines/](https://golangbot.com/goroutines/))
+
+```Go
+package main
+
+import (  
+    "fmt"
+    "time"
+)
+
+func numbers() {  
+    for i := 1; i <= 5; i++ {
+        time.Sleep(250 * time.Millisecond)
+        fmt.Printf("%d ", i)
+    }
+}
+func alphabets() {  
+    for i := 'a'; i <= 'e'; i++ {
+        time.Sleep(400 * time.Millisecond)
+        fmt.Printf("%c ", i)
+    }
+}
+func main() {  
+    go numbers()
+    go alphabets()
+    time.Sleep(3000 * time.Millisecond)
+    fmt.Println("main terminated")
+}
+```
+
+Ketika kita menjalankan kode di atas, kita akan mendapat *output* sebagai berikut.
+
+`1 a 2 3 b 4 c 5 d e main terminated`
+
+Visualisasi dari hasil di atas adalah sebagai berikut.
+
+![councrrency_example2](assets\Goroutines-explained.png).
+
+Seperti kita lihat pada gambar di atas, perintah `time.Sleep(3000 * time.Millisecond)` digunakan untuk menunggu goroutine `go alphabets()` dan `go numbers()` selesai dieksekusi. 
+
+Selanjutnya, mari kita perhatikan goroutine `go alphabets()` dan `go numbers()`. Pada gambar di atas, bisa kita lihat bahwa kedua goroutine tersebut dijalankan secara bersamaan tanpa menunggu salah satu goroutine selesai dieksekusi (maksudnya selesai mencetak dari huruf a sampai e untuk goroutine `go alphabets()` dan mencetak angka 1 sampai 5 untuk goroutine `go numbers()`).
+
+# Channel
+**Channel** saluran dalam bentuk queue yang digunakan untuk berkomunikasi antar gorountine.  ***Secara default***, proses menerima dan mengirim data pada channel bersifat *blocking* atau saling menunggu. Jika ada data yang masuk ke dalam channel, data tersebut harus diterima terlebih dahulu, kemudian data yang baru bisa memasuki channel setelah data sebelumnya selesai diterima.
+
+## Mendeklarasikan Channel
+Berikut cara mendeklarasikan, mengirim dan menerima data dari channel (kode diambil dari [https://golangbot.com/channels/](https://golangbot.com/channels/))
+
+```Go
+a := make(chan int) // mendeklarasikan channel dengan tipe data integer
+
+data := <- a // mengirim data dari channel a dan menyimpan hasilnya ke dalam variabel data
+a <- data // channel a menerima data dari variabel data
+```
+
+## Contoh Penggunaan Channel
+### Contoh Sederhana
+Berikut ini adalah kode cara penggunaan channel (kode diambil dari https://golangbot.com/channels/)
+```Go
+package main
+
+import (  
+    "fmt"
+)
+
+func hello(done chan bool) {  
+    fmt.Println("Hello world goroutine")
+    done <- true
+}
+func main() {  
+    done := make(chan bool)
+    go hello(done)
+    <-done
+    fmt.Println("main function")
+}
+```
+
+Hasil dari kode di atas adalah sebagai berikut
+
+````
+Hello world goroutine
+main function
+````
+
+Pada program di atas, kita mendeklarasikan channel `done` dengan tipe data boolean. Kemudian kita memiliki goroutine `go hello()` yang argumennya kita isi dengan channel `done`. Karena pada dasarnya sifat channel adalah *blocking*, `main function` tidak akan ditampilkan ke layar sebelum channel `done` selesai menerima data.
+
+### Memahami Lebih Dalam Konsep Blocking Pada Channel
+Mari kita modifikasi kode di atas menjadi seperti ini (kode diambil dari [https://golangbot.com/channels/](https://golangbot.com/channels/)).
+
+```Go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func hello(done chan bool) {
+	fmt.Println("hello go routine is going to sleep")
+	time.Sleep(2 * time.Second)
+	fmt.Println("hello go routine awake and going to write to done")
+	done <- true
+}
+func main() {
+	done := make(chan bool)
+	fmt.Println("Main going to call hello go goroutine")
+	go hello(done)
+	<-done
+	fmt.Println("Main received data")
+}
+
+```
+
+Kode di atas akan menghasilkan keluaran sebagai berikut.
+
+```
+Main going to call hello go goroutine
+hello go routine is going to sleep
+hello go routine awake and going to write to done
+Main received data
+```
+
+Pada hasil keluaran di atas, kita akan mendapatkan `Main going to call hello go goroutine` ditampilkan pertama kali, kemudian `hello go routine is going to sleep` dicetak dari go routine `go hello(done)` dan program akan *sleep* selama 2 detik. Setelah waktu *sleep* berakhir, `hello go routine awake and going to write to done` dicetak, dan boolean `true` akan dikirim ke *channel* `done`. Terakhir, *channel* `done` menerima data dan `Main received data` (ingat bahwa `Main received data` tidak akan tercetak sebelum *channel* `done` selesai menerima data).
