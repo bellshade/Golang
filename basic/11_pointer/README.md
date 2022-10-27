@@ -81,6 +81,11 @@ if(variabel_pointer == nil)
 ```
 
 ## Pass By Reference & Pointer Receiver
+
+```
+Catatan : Di dalam Golang sebenarnya tidak ada istilah pass by reference namun kita menggunakan istilah pass by reference di sini walau sebenarnya istilah tersebut kurang tepat. Selengkapnya silakan baca di https://dave.cheney.net/2017/04/29/there-is-no-pass-by-reference-in-go
+```
+
 Ketika kita membuat function di `Go` di mana kita ingin ketika ada perubahan pada nilai parameter di function tersebut, maka argumen asli dari parameter tersebut juga ikut berubah. Hal ini disebut sebagai *call by reference*, di mana kita menggunakan alamat memori atau pointer dari parameter yang kita lempar ke function. Perhatikan contoh di bawah ini (kode diolah dari [https://www.tutorialspoint.com/go/go_function_call_by_reference.htm](https://www.tutorialspoint.com/go/go_function_call_by_reference.htm))
 
 ```Go
