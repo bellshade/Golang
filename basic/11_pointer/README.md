@@ -80,3 +80,71 @@ if(variabel_pointer != nil)
 if(variabel_pointer == nil)
 ```
 
+## Pass By Reference & Pointer Receiver
+Ketika kita membuat function di `Go` di mana kita ingin ketika ada perubahan pada nilai parameter di function tersebut, maka argumen asli dari parameter tersebut juga ikut berubah. Hal ini disebut sebagai *call by reference*, di mana kita menggunakan alamat memori atau pointer dari parameter yang kita lempar ke function. Perhatikan contoh di bawah ini (kode diolah dari [https://www.tutorialspoint.com/go/go_function_call_by_reference.htm](https://www.tutorialspoint.com/go/go_function_call_by_reference.htm))
+
+```Go
+func passByReference(p *int, q *int){
+  var temp int
+  temp = *q
+  *q = *p
+  *p = temp
+}
+
+func main(){
+  p := 2
+  q := 3
+
+  fmt.Printf("value of p before : %v \n", p)
+  fmt.Printf("value of q before : %v \n", q)
+
+  callByReference(&p, &q)
+
+  fmt.Printf("value of p after : %v \n", p)
+  fmt.Printf("value of q after : %v \n", q)
+}
+```
+
+Kita akan mendapatkan hasil seperti ini.
+
+```
+value of p before : 2
+value of q before : 3
+value of p after : 3
+value of q after : 2
+```
+
+Seperti yang kita lihat, ketika kita melakukan *pass by reference*, dalam hal ini pada function `passByReference`, kita melakukan *pass* terhadap alamat memori atau *pointer* dari variabel `p` dan `q`. Di dalam function tersebut, kita melakukan pertukaran terhadap dua variabel tersebut menggunakan *pointer* dari masing-masing parameter. Hasil dari function `main` adalah kedua nilai variabel ikut berubah. Sehingga, **ketika kita melakukan pass by reference, perubahan yang terjadi di fungsi pemanggil juga terjadi pada fungsi aslinya** (pada kasus ini, fungsi pemanggil adalah `callByReference`, dan fungsi asli adalah `main`)
+
+Sama seperti *call by reference*, *pointer receiver* kita gunakan ketika kita menghendaki adanya perubahan pada method struct juga berlaku pada pemanggilnya. Perhatikan kode berikut (kode diambil dari [https://go.dev/tour/methods/4](https://go.dev/tour/methods/4))
+
+```Go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+type Vertex struct {
+	X, Y float64
+}
+
+func (v Vertex) Abs() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func (v *Vertex) Scale(f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
+func main() {
+	v := Vertex{3, 4}
+	v.Scale(10)
+	fmt.Println(v.Abs())
+}
+```
+
+Jika kita jalankan, kita akan mendapatkan hasil `50`. Sementara itu, jika method `Scale` kita ubah menjadi `func (v Vertex) Scale(f float64)`, kita akan mendapatkan hasil `5`. Hal ini disebabkan karena ketika kita melakukan *value receiver* (method `Scale` menggunakan receiver `v Vertex`) perubahan terhadap field `X` dan `Y` di dalam method `Scale` tidak tersimpan. Sebaliknya, jika kita melakukan *pointer receiver* (method `Scale` menggunakan receiver `v *Vertex`), yang terjadi adalah perubahan terhadap field `X` dan `Y` di dalam method `Scale` akan tersimpan.
+
