@@ -224,3 +224,74 @@ Main received data
 ```
 
 Pada hasil keluaran di atas, kita akan mendapatkan `Main going to call hello go goroutine` ditampilkan pertama kali, kemudian `hello go routine is going to sleep` dicetak dari go routine `go hello(done)` dan program akan *sleep* selama 2 detik. Setelah waktu *sleep* berakhir, `hello go routine awake and going to write to done` dicetak, dan boolean `true` akan dikirim ke *channel* `done`. Terakhir, *channel* `done` menerima data dan `Main received data` (ingat bahwa `Main received data` tidak akan tercetak sebelum *channel* `done` selesai menerima data).
+
+# Mutex
+Ketika kita menggunakan `routines`/`goroutine`, kita bisa saja mendapati bahwa program yang kita buat ternyata terjadi *race condition*. ***Race condition*** adalah keadaan di mana banyak `routines` yang mengakses satu data yang sama pada saat yang bersamaan, sehingga ketika `routines` tersebut selesai mengakses/melakukan perubahan pada data tersebut, hasil akhir pada data tersebut tidak konsisten. Kode di bawah ini mendemonstrasikan kejadian *race condition*
+
+```Go
+func main() {
+	x := 0
+
+	for i := 1; i <= 1000; i++ {
+		// will run 1000 go routines
+		go func() {
+			for j := 1; j <= 100; j++ {
+				// x is share among 1000 go routines,
+				// and should be returned 100000.
+				x = x + 1
+			}
+		}()
+	}
+
+	time.Sleep(2 * time.Second)
+	// each execution will give different result
+	fmt.Printf("value of x : %v", x)
+}
+```
+
+Setelah kita menjalankan kode di atas sebanyak 3 kali, kita akan mendapatkan hasil akhir dari variabel `x` yang berbeda setiap kali kita menjalankan kode tersebut, berikut hasilnya
+
+```
+value of x : 96671
+value of x : 91098
+value of x : 98686
+```
+
+Untuk mencegah terjadinya *race condition*, kita bisa menggunakan `Mutex` yang merupakan struct dari package bawaan `sync`.
+
+## Implementasi Mutex
+`Mutex` merupakan struct dari package bawaan `sync`. Pada kode di bawah ini, kita melakukan *lock* terhadap segala perubahan yang terjadi pada variabel `x`, sehingga tidak terjadi rebutan antar `goroutine` yang akan melakukan perubahan terhadap variabel `x`. Setelah seluruh perubahan selesai dikerjakan, kita melakukan *unlock* sehingga `goroutine` lain bisa melakukan perubahan terhadap variabel `x`.
+
+```Go
+func main() {
+	x := 0
+	var mutex sync.Mutex
+	
+	for i := 1; i <= 1000; i++ {
+		// will run 1000 go routines
+		go func() {
+			for j := 1; j <= 100; j++ {
+				// x is share among 1000 go routines,
+				// and should be returned 100000.
+
+				// locking any changes apply to x
+				mutex.Lock()
+				x = x + 1
+				// unlocking the changes
+				mutex.Unlock()
+			}
+		}()
+	}
+
+	time.Sleep(2 * time.Second)
+	// now each itteration will result the same
+	fmt.Printf("value of x : %v", x)
+}
+```
+
+Kita akan mendapatkan hasil yang sama setiap kali kita menjalankan kode di atas
+```
+value of x : 100000
+value of x : 100000
+value of x : 100000
+```
