@@ -77,7 +77,7 @@ func main(){
 
 kita dapat menggunakan awalan cost untuk mendeklarasikan kostanta dengan tipe tertentu dengan contoh
 
-```
+```go
 const nama_variabel tipe_data = value;
 ```
 

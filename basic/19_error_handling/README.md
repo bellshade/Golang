@@ -2,7 +2,7 @@
 
 pemograman go menyediakan kerangka kerja penanganan kesalahan yang cukup sederhan dengan tipe interface kesalahan bawaan dari deklarasi berikut:
 
-```
+```go
 type error interface {
   Error() string
 }
@@ -82,7 +82,7 @@ lebih lanjut dari [panic](PANIC.md)
 
 _recover_ adalah fungsi bawaan yang digunakan untuk mendapatkan kembali kendali atas program yang panic.
 
-```
+```go
 func recover() interface()
 ```
 

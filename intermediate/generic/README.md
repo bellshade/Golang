@@ -10,7 +10,7 @@ Tipe data type Parameter bisa dibaca secara otomatis misal dari parameter yang k
 Contoh nya adalah
 Before:
 
-```
+```go
 func Length[T any](param T) T {
 	return param
 }
@@ -23,7 +23,7 @@ func main() {
 
 After
 
-```
+```go
 func Length[T any](param T) T {
 	return param
 }
