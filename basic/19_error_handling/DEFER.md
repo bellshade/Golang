@@ -2,7 +2,7 @@
 
 contoh sintaks dari defer
 
-```
+```go
 //fungsi
 
 defer func nama_fungsi(list_parameter Type) return_tipe {

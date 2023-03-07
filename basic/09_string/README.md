@@ -62,7 +62,7 @@ func main(){
 ## menggabungkan string
 
 packet sting memyertakan metode **join** untuk menggabungkan beberapa string
-```
+```go
 string.Join(sample, "")
 ```
 

@@ -8,13 +8,13 @@ Nama variabel dapat terdiri dari huruf, angka, dan karakter garis bawah. Itu har
 
 Definisi variabel memberi tahu kompiler di mana dan berapa banyak penyimpanan yang harus dibuat untuk variabel. Definisi variabel menentukan tipe data dan berisi daftar satu atau lebih variabel dari tipe itu sebagai berikut
 
-```
+```go
 var nama_variabel tipe_data;
 ```
 
 Di sini, optional_data_type adalah tipe data Go yang valid termasuk byte, int, float32, complex64, boolean atau objek yang ditentukan pengguna, dll., dan variable_list dapat terdiri dari satu atau lebih nama pengenal yang dipisahkan dengan koma. Beberapa deklarasi yang valid ditampilkan di sini.
 
-```
+```go
 var angka1, angka2, angka3 int;
 var c, x byte;
 var angka4, uang float32;
@@ -27,7 +27,7 @@ Variabel dapat diinisialisasi (diberi nilai awal) dalam deklarasinya. Jenis vari
 nama_variabel = value;
 ```
 contoh
-```
+```go
 // deklarasi dari x dan angka2 adalah otomatis int
 x = 3, angka2 = 5;
 ```

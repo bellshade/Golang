@@ -69,7 +69,7 @@ func start() {
 
 dalam program di atas kita menggunakan kata kunci '__go__' sebelum pemanggilan fungi untuk memulai goroutine.
 
-```
+```go
 go start()
 ```
 
