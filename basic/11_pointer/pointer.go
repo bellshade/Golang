@@ -21,6 +21,6 @@ func main(){
 
   // menambahkan value yang terdapat pada variabel poin
   var angka_hasil = *poin + 20
-  fmt.Printf("hasil value variabel poin sesudah ditambahkan: %d\n", angka_hasil)
+  fmt.Printf("hasil value variabel poin sesudah ditambahkan: %d\n", angka_hasil)  
 }
 
