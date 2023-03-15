@@ -1,15 +1,16 @@
 package math_test
 
 import (
-  algmath "github.com/bellshade/golang/math"
+  algmath "github.com/bellshade/Golang/math"
   stdmath "math"
   "testing"
 )
 
 func TestSin(t *testing.T) {
   tests := []struct {
-    name string;
+    name string
     n float64
+    want float64
   } {
     {"sin(0)", 0, 0},
     {"sin(3π/2)", (3 * stdmath.Pi) / 2, -1},
@@ -21,7 +22,7 @@ func TestSin(t *testing.T) {
     t.Run(test.name, func(t *testing.T) {
       got := algmath.Sin(test.n);
       if stdmath.abs(got-test.want) >= epsilon {
-        t.Errorf("Sin() = %v, want %v", got, test test.want)
+        t.Errorf("Sin() = %v, want %v", got, test.want)
         t.Errorf("MATH Sin() = %v", stdmath.Sin(test.n))
       }
     })
