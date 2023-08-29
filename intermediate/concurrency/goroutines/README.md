@@ -295,3 +295,59 @@ value of x : 100000
 value of x : 100000
 value of x : 100000
 ```
+
+# WaitGroup
+```go
+var wg sync.WaitGroup
+```
+ Apa itu **WaitGroup**, **WaitGroup** adalah fitur yang digunakan untuk menunggu satu atau beberapa proses goroutine selesai dieksekusi. 
+ *contoh kode yang **tidak** mengunakan **Waitgroup***
+ ```go
+func sayHelloWorld(){
+	fmt.Println("Hello World")
+}
+func main() {
+	go sayHelloWorld()
+	time.Sleep(1 * time.Second)
+	fmt.Println("Kode tereksekusi")
+}
+```
+Kode diatas sebenarnya hanya memperkirakan kapan waktu **goroutine** tersebut selesai, dan ini sangat **tidak dianjurkan**, karena dapat mengakibatkan masalah yang sulit diidentifikasi dan diatasi. Dalam contoh diatas, meskipun goroutine mungkin telah selesai dalam waktu satu detik, ada kemungkinan kasus di mana goroutine belum selesai, bahkan setelah waktu yang ditentukan. Oleh karena itu, disarankan untuk menggunakan mekanisme yang lebih andal seperti **WaitGroup** untuk mengontrol penyelesaian goroutine secara akurat.
+
+----
+deklarasi WaitGroup :
+```go
+var wg sync.WaitGroup
+```
+WaitGroup memiliki 3 method :
+- `wg.Add(i int)` : adalah method untuk memberitahu `WaitGroup` tentang jumlah goroutine yang akan dijalankan
+- `wg.Done()` : method yang digunakan di dalam setiap goroutine untuk memberi sinyal bahwa goroutine telah selesai.
+- `wg.Wait()` : method yang digunakan untuk memblokir eksekusi program sampai semua goroutine yang ditambahkan selesai dan memanggil `Done()`.
+
+*contoh kode yang menggunakan **WaitGroup*** :
+```go
+// If `WaitGroup` is used as a parameter, make sure the parameter is a pointer.
+func worker(x int, wg *sync.WaitGroup) {
+	defer wg.Done() // Decreasing the count in the WaitGroup after the goroutine is finished
+	fmt.Printf("Worker %d starting \n", x)
+	time.Sleep(time.Second)
+	fmt.Printf("Worker %d done \n", x)
+}
+
+  
+func main() {
+// Initialize WaitGroup
+	var wg sync.WaitGroup
+	for i := 0; i < 100; i++ {
+		wg.Add(1) // Adding 1 to the count of goroutines to be waited
+		go worker(i, &wg)
+	}
+	wg.Wait() // Waiting until all goroutines are finished
+	fmt.Println("All worker are finished")
+}
+```
+mari bedah kode diatas satu persatu :
+- **func worker(x int, wg *sync.WaitGroup)**: Ini adalah fungsi `worker` yang menerima dua parameter, yaitu `x` yang merupakan nomor identifikasi pekerja (goroutine), dan `wg` yang adalah pointer ke `sync.WaitGroup`. Penggunaan `*sync.WaitGroup` sebagai parameter menunjukkan bahwa parameter ini adalah referensi ke objek `WaitGroup` yang sama, yang akan digunakan untuk mengendalikan penyelesaian goroutine.
+- **wg.Done()** : Pada akhir setiap goroutine, perintah ini mengurangkan nilai hitung di `WaitGroup` menggunakan metode `Done()`, menandakan bahwa goroutine tersebut telah selesai.
+- **wg.Add(1)** dan **go worker(i, &wg)**: Dalam loop `for`, setiap iterasi menambahkan 1 ke hitungan `WaitGroup` dengan `wg.Add(1)` sebelum goroutine dimulai. Ini memastikan bahwa `WaitGroup` mengetahui bahwa ada goroutine yang harus selesai.
+- **wg.Wait()**: Di dalam `main` function, `wg.Wait()` akan menunggu hingga semua goroutine yang telah dimulai selesai dieksekusi. Ini memastikan bahwa program tidak akan melanjutkan eksekusi lebih jauh sampai semua goroutine selesai.
