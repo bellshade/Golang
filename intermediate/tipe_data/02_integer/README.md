@@ -14,6 +14,27 @@ Golang mendukung tipe data integer secara ekstensif yang antara lain adalah
 - ``uint32`` integer yang tidak bertanda 32-bit yang rentangnya ``0`` hingga ``4294967295``
 - ``uint64`` integer 64-bit unsigned yang rentangnya ``0`` hingga ``18446744073709551615``
 
+## Perbedaan int dan integer ekstensif
+
+Dalam bahasa pemrograman Go, terdapat tipe data `int` dan integer ekstensif seperti `int32`. Terdapat perbedaan dari kedua tipe data tersebut.
+
+**`int`:**
+
+Ukuran data bertipe `int` tergantung pada arsitektur mesin komputer dimana program Go dijalankan.
+
+Untuk arsitektur 32 bit, `int` berukuran 32 bits (4 bytes).
+Untuk arsitektur 64 bit, `int` berukuran 64 bits (8 bytes).
+
+**`int32`** dan ekstensif lainnya:
+
+Ukuran data bertipe integer ekstensif seperti `int32` bersifat konsisten, dan tidak bergantung pada arsitektur mesin komputer.
+
+`int8` berukuran 8 bit.
+`int16` berukuran 16 bit.
+`int32` berukuran 32 bit.
+
+dan seterusnya.
+
 ## integer overflow pada golang
 
 jika kita menetapkan jenis dan kemudian menggunakan angka yang lebih besar dari rentang jenis untuk menetapkannya, itu akan gagal. contoh
