@@ -11,6 +11,45 @@ var angka []int
 angka = make([]int, 5, 5) /* memiliki panjang 5 dan kapasitas 5 */
 ```
 
+selain itu, kita juga dapat membuat slice dari array yang sudah ada sebelumnya tanpa menggunakan function `make()`. dengan cara ini, maka slice yang kita buat akan menjadi *reference* ke array tersebut.
+
+metode ini dilakukan dengan sintaksis `low:high` yang dapat dibagi menjadi 4 jenis:
+
+```golang
+array[low:high] // membuat Slice dari array index low hingga index sebelum high (high - 1)
+array[low:] // membuat Slice dari array index low hingga index terakhir di array
+array[:high] // membuat Slice dari array index 0 hingga index sebelum high (high - 1)
+array[:] // membuat Slice dari array index 0 hingga index terakhir di array
+```
+
+berikut contohnya:
+
+```golang
+// bikin array
+days := [7]string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+
+// bikin slice dari array
+weekend := days[5:]   // [low:] dari index ke-5 sampai index terakhir
+weekdays := days[:5]  // [:high] dari index ke-0 sampai ke 4 (5 - 1)
+codingDays := days[:] // [:] dari index ke-0 sampai index terakhir
+meetingDays := days[2:4] // [low:high] index ke-2 sampai index ke 3 (4 - 1)
+
+// print data slice
+fmt.Println(weekend)
+fmt.Println(weekdays)
+fmt.Println(codingDays)
+fmt.Println(meetingDays)
+```
+
+**output:**
+
+```bash
+[Saturday Sunday]
+[Monday Tuesday Wednesday Thursday Friday]
+[Monday Tuesday Wednesday Thursday Friday Saturday Sunday]
+[Wednesday Thursday]
+```
+
 ## fungsi ken() dan cap()
 
 slice adalah abstraksi dari array. ini sebenarnya menggunakan array sebagai struktur yang mendasarinya. fungsi ``len()`` mengembalikan elemen yang ada dalam irisan di mana fungsi ``cap()`` mengembalikan kapasitas slice (yaitu, beberapa banyak elemen yang dapat di akomodasi). contoh berikut
