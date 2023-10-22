@@ -78,3 +78,26 @@ func main(){
     fmt.Println(strings.Join(pesan, " "))
 }
 ```
+
+## memecah string menjadi slice rune
+
+Dalam bahasa Go, kita bisa memecah sebuah string menjadi kumpulan rune dalam sebuah slice. Misal kita punya string `"Hello"`, maka akan diconvert jadi sebuah slice `['H','e','l','l','o']`.
+
+Syntax: `strSlice := []rune(variableString)`
+
+Contoh:
+
+```go
+str := "Hello"
+
+strSlice := []rune(str)
+
+fmt.Println(strSlice)
+```
+Output:
+
+`[72 101 108 108 111]`
+
+Jangan bingung dengan output angka-angka diatas. Itu hanya ASCII Code (representasi angka dari tiap karakter).
+
+Hint: Teknik `string to rune slice` ini cocok diterapin kalo kita mau sorting sebuah string
