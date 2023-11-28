@@ -45,7 +45,7 @@ tabel berikut menujukkan semua operator logika yang di dukung oleh bahasa go
 | Operator      | keterangan                                    | contoh        |
 | :---:         | :---                                          | :---:         |
 | ``&&``        | disebut operator logika AND. jike kedua operan salah, maka kondisi menjadi salah | ``A && B``         |
-| ``||``        | disebut operator logika ATAU. jika salah satu operan bemar, maka kondisi menjadi benar | ``A || B``   |
+| ``\|\|``        | disebut operator logika ATAU. jika salah satu operan bemar, maka kondisi menjadi benar | ``A \|\| B``   |
 | ``!``         | disebut operator BUKAN. gunakan untuk membalikkan keadaan logis operannya. jika suatu kondisi benar, maka operator logical not akan membuatnya salah | ``!(A && b)``        |
 
 
@@ -53,7 +53,7 @@ tabel berikut menujukkan semua operator logika yang di dukung oleh bahasa go
 
 operator bitwise bekerja pada bit dan melakukan operasi bit demi bit. tabel untuk &, |, ^ adalah sebagai berikut
 
-| var p      | var q      | var p & q         | var ``p | q``     | var p     |
+| var p      | var q      | var p & q         | var ``p \| q``     | var p     |
 | :---  | :---  | :---         | :---         | :--- |
 | 0      | 0      | 0             | 0             | 0     |
 | 0      | 1      | 0             | 1             | 1     |
