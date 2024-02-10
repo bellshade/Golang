@@ -21,6 +21,6 @@ jobs:
         with:
           version: latest
           args: --disable-all -E gofmt
-          cache: false
+          skip-build-cache: true
       - name: run test
         run: go test ./..
