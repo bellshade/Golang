@@ -1,2 +1,3 @@
 run:
   go: 1.19
+  timeout: 10m
