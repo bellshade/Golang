@@ -11,7 +11,7 @@ func main(){
   fmt.Println("angka ==", angka)
   
   /* print dari subslice yng dimulai dari index 1 */
-  fmt.Prinfln(angka[1:4] ==, angka[1:4])
+	fmt.Println("angka[1:4] ==", angka[1:4])
 
   fmt.Println("angka[4:] ==", angka[4:])
 
