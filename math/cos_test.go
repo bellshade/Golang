@@ -31,4 +31,3 @@ func TestCos(t *testing.T) {
 		})
 	}
 }
-

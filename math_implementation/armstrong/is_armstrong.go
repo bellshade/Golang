@@ -7,30 +7,30 @@
 package armstrong
 
 import (
-  "math"
-  "strconv"
+	"math"
+	"strconv"
 )
 
-func cekArmstrong(angka int) bool{
-  var digit_kanan int
-  var sum int = 0
-  var tempNum int = angka 
+func cekArmstrong(angka int) bool {
+	var digit_kanan int
+	var sum int = 0
+	var tempNum int = angka
 
-  // untuk mendapatkan jumlah digit
-  // di dalam nomor
-  length := float64(len(strconv.Itoa(angka)))
+	// untuk mendapatkan jumlah digit
+	// di dalam nomor
+	length := float64(len(strconv.Itoa(angka)))
 
-  // dapatkan digit paling kanan dan putuskan loop
-  // setelah semua digit diulang
+	// dapatkan digit paling kanan dan putuskan loop
+	// setelah semua digit diulang
 
-  for tempNum > 0 {
-    digit_kanan = tempNum % 10
-    sum += int(math.Pow(float64(digit_kanan), length))
+	for tempNum > 0 {
+		digit_kanan = tempNum % 10
+		sum += int(math.Pow(float64(digit_kanan), length))
 
-    // perbarui digit input dikurangi yang diproses
-    // paling kanan
-    tempNum /= 10
-  }
-  
-  return angka == sum
+		// perbarui digit input dikurangi yang diproses
+		// paling kanan
+		tempNum /= 10
+	}
+
+	return angka == sum
 }
