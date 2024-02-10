@@ -1,9 +1,10 @@
 package math_test
 
 import (
-	algmath "github.com/bellshade/Golang/math"
 	stdmath "math"
 	"testing"
+
+	algmath "github.com/bellshade/Golang/math"
 )
 
 func TestSin(t *testing.T) {
@@ -21,7 +22,7 @@ func TestSin(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			got := algmath.Sin(test.n)
-			if stdmath.abs(got-test.want) >= epsilon {
+			if stdmath.Abs(got-test.want) >= epsilon {
 				t.Errorf("Sin() = %v, want %v", got, test.want)
 				t.Errorf("MATH Sin() = %v", stdmath.Sin(test.n))
 			}
@@ -37,6 +38,6 @@ func BenchmarkSin(b *testing.B) {
 
 func BenchmarkMathSin(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		stdmath.sin(180)
+		stdmath.Sin(180)
 	}
 }
