@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	var angka []int
 	printSlice(angka)
@@ -23,8 +21,4 @@ func main() {
 
 	/* menyalin konten dari angka ke angka1 */
 	copy(angka1, angka)
-}
-
-func printSlice(x []int) {
-	fmt.Printf("len%d cap=%d slice=%v\n", len(x), cap(x), x)
 }

@@ -5,16 +5,16 @@ import (
 	"fmt"
 )
 
-func doSomethingWithContext(ctx context.Context){
-	fmt.Printf("This is : %v \n",ctx)
+func doSomethingWithContext(ctx context.Context) {
+	fmt.Printf("This is : %v \n", ctx)
 }
 
-func doAnotherFromSomething(ctx context.Context){
+func doAnotherFromSomething(ctx context.Context) {
 	// menghasilkan anotherKey from doAnotherCtx anotherKey : anotherVal
 	fmt.Printf("key from doAnotherCtx anotherKey : %s \n", ctx.Value("key"))
 }
 
-func doSomethingContextWithValue(ctx context.Context){
+func doSomethingContextWithValue(ctx context.Context) {
 	fmt.Printf("key from ctxWithVal : %s \n", ctx.Value("key"))
 	doAnotherCtx := context.WithValue(ctx, "key", "anotherVal")
 	doAnotherFromSomething(doAnotherCtx)

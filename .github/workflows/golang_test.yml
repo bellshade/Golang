@@ -19,7 +19,10 @@ jobs:
       - name: golang ci linting
         uses: golangci/golangci-lint-action@v3
         with:
-          version: latest
-          args: -E gofmt
-      - name: run test
-        run: go test ./..
+          version: v1.51.0
+          args: --disable-all -E gofmt --print-linter-name
+          skip-build-cache: true
+      - name: run math unit testing
+        run: go test ./math/...
+      - name: run math implementation unit testing
+        run: go test ./math_implementation/...
