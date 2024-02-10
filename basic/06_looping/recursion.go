@@ -12,7 +12,7 @@ func main() {
 func factorial_number(n int) int {
 	// print stack (perulangan) fungsi
 	fmt.Printf("bilangan faktorial %d\n", n)
-	
+
 	// jika n atau parameter sama dengan 0
 	// tidak ada perulangan lagi (fungsi telah selesai dijalankan)
 	if n == 0 {
@@ -23,4 +23,3 @@ func factorial_number(n int) int {
 	// dikarenakan nilai n belum sama dengan 0
 	return n * factorial_number(n-1)
 }
-
