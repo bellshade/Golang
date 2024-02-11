@@ -30,7 +30,7 @@ func (p2 *Person2) getSkin() string {
 // meingimplementasikan interface human untuk struct person2
 func (p2 *Person2) walk() {
 	p2.speed++
-	fmt.Printf("speed after walk: %d\n",p2.speed)
+	fmt.Printf("speed after walk: %d\n", p2.speed)
 }
 
 // mengimplementasikan interface human untuk struct person1
@@ -57,7 +57,7 @@ func main() {
 			jika kalian tidak ingin memasukkan nilai skin kalian bisa beri aja nilai ""
 	*/
 	human := NewHuman("your name", 20, "white")
-	
+
 	/*
 		mengkonversi dan melakukan pengecekan apakah konversi tipe interface Human ke tipe *Person1 gagal atau berhasil jika ok maka eksekusi kode if ini
 	*/
