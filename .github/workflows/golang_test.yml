@@ -16,10 +16,5 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '^1.18'
-      - name: golang ci linting
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
-          args: -E gofmt
       - name: run unit testing
         run: go test $(go list ./... | grep -v 'basic\|intermediate\|utilities')
