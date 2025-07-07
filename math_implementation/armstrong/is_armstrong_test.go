@@ -34,7 +34,7 @@ var testCase = []struct {
 	},
 }
 
-func testingArmstrong(t *testing.T) {
+func TestArmstrong(t *testing.T) {
 	for _, test := range testCase {
 		t.Run(test.name, func(t *testing.T) {
 			funcResult := cekArmstrong(test.input)
