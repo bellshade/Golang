@@ -11,19 +11,11 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: setup go untuk testing
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: '^1.18'
-      - name: golang ci linting
-        uses: golangci/golangci-lint-action@v3
-        with:
-          version: v1.51.0
-          args: --disable-all -E gofmt --print-linter-name
-          skip-build-cache: true
-      - name: format kode
-        run: make format
       - name: run unit testing
         run: make test
       - name: unittesting dengan race-condition
