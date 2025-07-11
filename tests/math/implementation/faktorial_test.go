@@ -1,19 +1,21 @@
-package faktorial
+package math_implementation
 
 import (
 	"fmt"
 	"testing"
+
+	"github.com/bellshade/Golang/math_implementation/faktorial"
 )
 
 type fungsiFaktorial func(int) (int, error)
 
 var implementasi = map[string]fungsiFaktorial{
-	"Iterasi":  Iterasi,
-	"Rekursif": Rekursif,
-	"Tree":     TreeBin,
+	"Iterasi":  faktorial.Iterasi,
+	"Rekursif": faktorial.Rekursif,
+	"Tree":     faktorial.TreeBin,
 }
 
-var testCase = []struct {
+var testCaseFactorial = []struct {
 	n         int
 	ekspetasi int
 }{
@@ -27,12 +29,12 @@ func TestFaktorial(t *testing.T) {
 	for implName, implFunction := range implementasi {
 		t.Run(implName+" error input negatif", func(t *testing.T) {
 			_, error := implFunction(-1)
-			if error != ArgumentNegatif {
+			if error != faktorial.ArgumentNegatif {
 				t.Errorf("tidak ada error dari input negatif")
 			}
 		})
 
-		for _, tc := range testCase {
+		for _, tc := range testCaseFactorial {
 			t.Run(fmt.Sprintf("%s dengan input %d", implName, tc.n), func(t *testing.T) {
 				aktual, err := implFunction(tc.n)
 				if err != nil {
