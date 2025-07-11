@@ -31,13 +31,13 @@ func TestSin(t *testing.T) {
 }
 
 func BenchmarkSin(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		algmath.Sin(180)
 	}
 }
 
 func BenchmarkMathSin(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		stdmath.Sin(180)
 	}
 }
