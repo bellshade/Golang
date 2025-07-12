@@ -3,7 +3,7 @@ package searching
 import (
 	"testing"
 
-	"github.com/bellshade/Golang/searching"
+	"github.com/bellshade/Golang/algoritma/searching"
 )
 
 func TestLinearSearching(t *testing.T) {
