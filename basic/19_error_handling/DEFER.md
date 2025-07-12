@@ -55,8 +55,6 @@ func main() {
 }
 ```
 
-- pertama kita memanggil fungsi ``perkalian`` secara normal (tanpa kata kunci ``defer``), ketika dijalnkn fungsi dipanggil dengan hasil 25 * 4 = 100.
+- pertama kita memanggil fungsi `perkalian` secara normal (tanpa kata kunci `defer`), ketika dijalnkn fungsi dipanggil dengan hasil 25 * 4 = 100.
 
-- kedua kita memanggil fungsi ``perkalian`` sebagai fungsi defer menggunakan kata kunci ``defer`` dan dijalankan dengan hasil 7 * 4 = 28, ketika semua metode di sekitarnya kembali
-
-
+- kedua kita memanggil fungsi `perkalian` sebagai fungsi defer menggunakan kata kunci `defer` dan dijalankan dengan hasil 7 * 4 = 28, ketika semua metode di sekitarnya kembali

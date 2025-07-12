@@ -8,7 +8,7 @@ lingkup dalam pemograman apaun adalah wilayah program di mana variabel yang dite
 
 ## variabel lokal
 
-variabel yang didekalarasikan di dalam fungsi atau blok disebut variabel lokal. mereka hanya dapat digunakan  oleh pernyataan yang ada di dalm fungsi atau blok kode tersebut.
+variabel yang didekalarasikan di dalam fungsi atau blok disebut variabel lokal. mereka hanya dapat digunakan oleh pernyataan yang ada di dalm fungsi atau blok kode tersebut.
 
 ```golang
 package main
@@ -78,4 +78,3 @@ func tambah(a, b int) int{
     return a + b
 }
 ```
-
