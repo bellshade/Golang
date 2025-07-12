@@ -32,4 +32,4 @@ var makananSaya = makanan[0:2]
 fmt.Println(makananSaya)
 ```
 
-Kode ``makanan[0:2]`` maksudnya adalah pengaksesan elemen dalam slice ``makann`` yang dimulai dari indeks ke-0, hingga elemen sebelum indeks ke-2. Elemen yang memenuhi kriteria tersebut akan didapat, untuk kemudian disimpan pada variabel lain sebagai slice baru.
+Kode `makanan[0:2]` maksudnya adalah pengaksesan elemen dalam slice `makann` yang dimulai dari indeks ke-0, hingga elemen sebelum indeks ke-2. Elemen yang memenuhi kriteria tersebut akan didapat, untuk kemudian disimpan pada variabel lain sebagai slice baru.

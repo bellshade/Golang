@@ -82,6 +82,7 @@ func main() {
 alur kendali dalam **for** loop adalah sebagai berikut:
 
 - jika suatu kondisi tersedia, maka for loop dijalankan selama kondisinya benar.
+
 - jika klausa **for** yaitu `(init; kondisi; increment;)` ada maka
 
   - langkah ini dijalankan terlebih dahulu, dan hanya sekali. langkah ini memungkinkan kita untuk mendeklarasikan dan menginisialisasi variabel kontrol loop apa pun. kita tidak perlu membuat pernyataan disini, selama titik koma muncul.
@@ -177,6 +178,7 @@ func factorial_number(n int) int {
 ```
 
 berikut ilustrasinya
+
 ```
 factorial_number(3)
 | 3 - 1

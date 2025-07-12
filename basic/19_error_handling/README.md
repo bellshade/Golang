@@ -8,7 +8,7 @@ type error interface {
 }
 ```
 
-fungsi biasany mengembalikan kesalahan sebagai nili pengembalian terakhir. gunakan ``errors.New`` untuk membuat pesan kesalahan dasar sebgai berikut
+fungsi biasany mengembalikan kesalahan sebagai nili pengembalian terakhir. gunakan `errors.New` untuk membuat pesan kesalahan dasar sebgai berikut
 
 ```go
 func Sqrt(value float64) (float64, error) {
@@ -64,9 +64,9 @@ func main() {
 }
 ```
 
-## defer 
+## defer
 
-dalam bahasa go, pernyataan defer menunda ekseskusi fungsi atau metode anonim hingga fungsi terdekat kembali. dengan kata lain, argumen penangguhan fungsi atau pemanggilan metode dievaluasi secara instan, tetapi mereka tidak mengekseskusi saampai funsi terdekat kembali. kita dapat membuat metode yang ditangguhkan, atua fungsi, atau fungsi anonim dengan menggunakan keyword ``defer``
+dalam bahasa go, pernyataan defer menunda ekseskusi fungsi atau metode anonim hingga fungsi terdekat kembali. dengan kata lain, argumen penangguhan fungsi atau pemanggilan metode dievaluasi secara instan, tetapi mereka tidak mengekseskusi saampai funsi terdekat kembali. kita dapat membuat metode yang ditangguhkan, atua fungsi, atau fungsi anonim dengan menggunakan keyword `defer`
 
 contoh lebih lanjut dari [defer](DEFER.md)
 
@@ -74,7 +74,7 @@ contoh lebih lanjut dari [defer](DEFER.md)
 
 cara idiomatis untuk menangani kondisi abnormal dalm progrma go adalah menggunakan error. kesalahan cukup untuk sebagian besr kondisi abnormal timbul dalam program.
 
-tetapi beberap situasi di mana program tidak dapat melanjutkan ekseskusi setelah kondisi abnormal. dalam hasil ini, kita menggunakan ``panic`` untuk menghentikan program sebelum waktunya. ketika suatu fungsi mengalmi kepanikan, eksekusiny dihentikan, semua fungsi yang ditangguhkn dijalankan dan kemudian kontrol kembali ke pemanggilannya. proses ini berlanjut sampai emua fungsi goroutine saat ini telh kembali di mana program mencetak pesan panic, diikuti oleh pelacakan  tumpukan dan kemudian dihentikan
+tetapi beberap situasi di mana program tidak dapat melanjutkan ekseskusi setelah kondisi abnormal. dalam hasil ini, kita menggunakan `panic` untuk menghentikan program sebelum waktunya. ketika suatu fungsi mengalmi kepanikan, eksekusiny dihentikan, semua fungsi yang ditangguhkn dijalankan dan kemudian kontrol kembali ke pemanggilannya. proses ini berlanjut sampai emua fungsi goroutine saat ini telh kembali di mana program mencetak pesan panic, diikuti oleh pelacakan tumpukan dan kemudian dihentikan
 
 lebih lanjut dari [panic](PANIC.md)
 
@@ -87,4 +87,3 @@ func recover() interface()
 ```
 
 lebih lanjut dari [recover](RECOVER.md)
-

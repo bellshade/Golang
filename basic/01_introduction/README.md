@@ -31,69 +31,70 @@ func main() {
 Sebelum mulai belajar, pastikan kamu sudah menginstall Go di komputer kamu. Jika belum, kamu bisa mengikuti panduan berikut ini.
 
 1. Download *installer* dari [https://golang.org/doc/install](https://golang.org/doc/install). Pilih sesuai dengan OS yang kamu gunakan.
-2. Setelah ter-*download*, jalankan installer dengan cara sebagai berikut.
-    
-    #### Windows
-    
-    - Buka file yang sudah kamu download lalu ikuti proses instalasi sampai selesai. Secara default, Go akan terinstall di `C:\go`.
-    - Buka *command prompt* (CMD) **kamu dan ketikkan
-        
-        ```powershell
-        > go version
-        ```
-        
-    - Pastikan keluar output berupa versi Go yang sudah kamu install. Jika tidak, restart CMD kamu lalu coba kembali command di atas,
-    
-    #### Mac
-    
-    - Buka file yang sudah kamu download lalu ikuti proses instalasi sampai selesai. Secara default, Go akan terinstall di `/usr/local/go`.
-    - Buka terminal kamu dan ketikkan
-        
-        ```bash
-        $ go version
-        ```
-        
-    - Pastikan keluar output berupa versi Go yang sudah kamu install. Jika tidak, restart CMD kamu lalu coba kembali perintah di atas,
-    
-    #### Linux
-    
-    - Buka terminal dan ekstrak file yang sudah didownload ke `/usr/local`. Kamu bisa menjalankan perintah berikut
-        
-        ```bash
-        $ sudo tar -C /usr/local -xzf <nama file>
-        ```
-        
-    - Tambahkan path instalasi Go ke dalam environment variable dengan cara
-        
-        ```bash
-        $ echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
-        $ source ~/.profile
-        ```
-        
-    - Pastikan Go sudah terinstall dengan menjalankan perintah ini
-        
-        ```bash
-        $ go version
-        ```
-        
+
+1. Setelah ter-*download*, jalankan installer dengan cara sebagai berikut.
+
+   #### Windows
+
+   - Buka file yang sudah kamu download lalu ikuti proses instalasi sampai selesai. Secara default, Go akan terinstall di `C:\go`.
+
+   - Buka *command prompt* (CMD) \*\*kamu dan ketikkan
+
+     ```powershell
+     > go version
+     ```
+
+   - Pastikan keluar output berupa versi Go yang sudah kamu install. Jika tidak, restart CMD kamu lalu coba kembali command di atas,
+
+   #### Mac
+
+   - Buka file yang sudah kamu download lalu ikuti proses instalasi sampai selesai. Secara default, Go akan terinstall di `/usr/local/go`.
+
+   - Buka terminal kamu dan ketikkan
+
+     ```bash
+     $ go version
+     ```
+
+   - Pastikan keluar output berupa versi Go yang sudah kamu install. Jika tidak, restart CMD kamu lalu coba kembali perintah di atas,
+
+   #### Linux
+
+   - Buka terminal dan ekstrak file yang sudah didownload ke `/usr/local`. Kamu bisa menjalankan perintah berikut
+
+     ```bash
+     $ sudo tar -C /usr/local -xzf <nama file>
+     ```
+
+   - Tambahkan path instalasi Go ke dalam environment variable dengan cara
+
+     ```bash
+     $ echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+     $ source ~/.profile
+     ```
+
+   - Pastikan Go sudah terinstall dengan menjalankan perintah ini
+
+     ```bash
+     $ go version
+     ```
 
 ### Cara Menjalankan Program
 
 Program Go bisa dijalankan dengan dua cara
 
 1. Melakukan kompilasi (*compile*) terlebih dahulu, lalu mengeksekusi file hasil kompilasi tersebut.
-    
-    ```bash
-    $ go build main.go
-    $ ./main
-    ```
-    
-2. Langsung menjalankan program tanpa melakukan kompilasi
-    
-    ```bash
-    $ go run main.go
-    ```
-    
+
+   ```bash
+   $ go build main.go
+   $ ./main
+   ```
+
+1. Langsung menjalankan program tanpa melakukan kompilasi
+
+   ```bash
+   $ go run main.go
+   ```
 
 ## Struktur Program Go
 
@@ -147,7 +148,6 @@ func main() {
 Dalam sebuah program Go, harus terdapat package `main` dan fungsi `main()` di dalamnya. Fungsi `main()` adalah fungsi yang menampung semua program kamu. Ketika program dijalankan, fungsi `main` akan dieksekusi pertama kali.
 
 > **Tambahan:** Penggunaan titik koma (*semicolon*) tidak wajib (opsional)
-> 
 
 ## Menulis Program Go Pertamamu
 
@@ -163,7 +163,7 @@ func main() {
 }
 ```
 
-Penjelasan tentang code ini dapat dilihat [di sini](hello_world.go) 
+Penjelasan tentang code ini dapat dilihat [di sini](hello_world.go)
 
 Setelah itu, jalankan program menggunakan perintah
 

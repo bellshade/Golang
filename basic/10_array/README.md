@@ -24,7 +24,7 @@ kita dapat menginisialisasi array di go satu per satu atau menggunakan satu pern
 var contoh = [5] float32 {20.3, 30.2, 55.2, 44.1, 99.2}
 ```
 
-jumlah nilai di antara kurung kurawal ``{}`` tidak boleh lebih besar dari jumlah elemen yang kita nyatakan untuk array di antara kurung siku
+jumlah nilai di antara kurung kurawal `{}` tidak boleh lebih besar dari jumlah elemen yang kita nyatakan untuk array di antara kurung siku
 
 jika kita menghilangkan ukuran array, array yang cukup besar untuk inisialisasi akan dibuat.
 
@@ -40,9 +40,10 @@ sebuah elemen diakses dengan mengindeks nama array. ini dilakukan dengan menempa
 float nilai = contoh[2]
 ```
 
-pernyataan diatas mengambil elemen ke-3 dari array dan menetapkan nilai ke variabel nilai. 
+pernyataan diatas mengambil elemen ke-3 dari array dan menetapkan nilai ke variabel nilai.
 
 contoh pengunaan secara menyeluruh
+
 ```golang
 package main
 

@@ -1,6 +1,7 @@
 # Contributing
 
 ## Daftar Isi
+
 - [Contributor](#contributor)
 - [Kategori yang tersedia](#kategori-yang-tersedia)
   - [Basic](#pembelajaran-dasar-basic-learning)
@@ -28,9 +29,9 @@ Kami sangat senang Anda dapat ikut berkontribusi dalam implementasi algoritma, s
 
 Basic learning adalah kumpulan demonstrasi kode materi pemrograman Go beserta artikel penjelasan yang lengkap, mudah dimengerti dan menarik secara visual. Dirangkai dengan alur yang runtut mulai dasar sehingga bisa dijadikan referensi untuk kalian yang belajar pemrograman Go.
 
-Untuk berkontribusi di repositori bellshade Golang bagian Basic ini kamu harus mengikuti urutan materi yang telah ditentukan. Daftar materi yang tersedia bisa kamu jelajahi di [issue ini](https://github.com/bellshade/Golang/issues/4). Di dalam issue itu kami juga menuliskan rekomendasi tentang konten yang ada dalam materi tersebut, namun kamu masih dapat menambah materi konten jika dirasa perlu. 
+Untuk berkontribusi di repositori bellshade Golang bagian Basic ini kamu harus mengikuti urutan materi yang telah ditentukan. Daftar materi yang tersedia bisa kamu jelajahi di [issue ini](https://github.com/bellshade/Golang/issues/4). Di dalam issue itu kami juga menuliskan rekomendasi tentang konten yang ada dalam materi tersebut, namun kamu masih dapat menambah materi konten jika dirasa perlu.
 
-Semua implementasi kode untuk Basic Learning bisa ditemukan di `/basics`  <br/>
+Semua implementasi kode untuk Basic Learning bisa ditemukan di `/basics` <br/>
 dengan struktur direktori sebagai berikut <br/>
 
 ```
@@ -45,7 +46,6 @@ dengan struktur direktori sebagai berikut <br/>
 ```
 
 > Artikel materi ditulis pada `README.md` <br/>
-
 
 ### Algoritma (_Algorithm_)
 
@@ -68,12 +68,14 @@ Semua implementasi kode untuk Algorithm bisa ditemukan di `/algorithms` dengan b
  ┃ ┃ ┃ ┗ 📜README.md
  ┃ ┃ ┗ 📜README.md
 ```
+
 > Artikel penjelasan algoritma ditulis pada `README.md` <br/>
 
 ### Komponen/Fungsi Kegunaan _(Utilities)_
+
 Kategori utilities adalah kumpulan referensi dan contoh penggunaan komponen-komponen/fitur-fitur umum yang mungkin diperlukan oleh para web developer untuk diterapkan pada project aplikasi webnya. Didalam kategori ini, kalian dapat menjelajahi berbagai macam kebutuhan umum untuk pengembangan web umum dan mempelajari bagaimana cara mengimplementasikannya.
 
-Utility ini adalah sesuatu yang bukan esensial dalam pengembangan web namun terkadang dibutuhkan. Bisa juga dibilang Utility ini adalah peralatan/komponen yang bisa melengkapi sebuah fitur dalam aplikasi berbasis web. Contohnya adalah seperti: Manipulasi Gambar, DateTime, Mencetak ke printer dot matrix dan sebagainya. 
+Utility ini adalah sesuatu yang bukan esensial dalam pengembangan web namun terkadang dibutuhkan. Bisa juga dibilang Utility ini adalah peralatan/komponen yang bisa melengkapi sebuah fitur dalam aplikasi berbasis web. Contohnya adalah seperti: Manipulasi Gambar, DateTime, Mencetak ke printer dot matrix dan sebagainya.
 
 Semua tentang Utility dapat ditemukan pada direktori `/utilities`<br/>
 dengan bentuk struktur yang mirip dengan `algorithm`
@@ -88,13 +90,13 @@ dengan bentuk struktur yang mirip dengan `algorithm`
  ┃ ┃ ┃ ┣ 📜 .....
  ┃ ┃ ┃ ┗ 📜README.md
  ┃ ┃ ┗ 📜README.md
- ```
+```
+
 > Artikel penjelasan utility ditulis pada `README.md` <br/>
 
 ## Standar Penulisan
 
-### Gaya Penulisan 
-
+### Gaya Penulisan
 
 ### Pedoman Penulisan Lainnya untuk Pembelajaran Dasar (_Basic Learning_)
 
@@ -112,12 +114,9 @@ Pedoman penulisan untuk utilities sama persis seperti materi pembelajaran dasar 
 
 ### Pedoman Penulisan Lainnya untuk Algoritma (_Algorithm_)
 
-
-
 ## Percobaan (_Testing_)
 
 Testing hanya dilakukan untuk Algorithm dan tidak diperlukan untuk Basic Learning ataupun Utility. Testing algoritma diperlukan agar suatu algoritma berjalan sesuai dengan yang di harapkan. Kami juga menerapkan unit testing ini pada _Continuous Integration_ kami agar selalu dijaga keandalan kodenya.
-
 
 ## Pull Request
 

@@ -7,9 +7,10 @@
 
 </p>
 
----
+______________________________________________________________________
 
 ## Daftar Isi
+
 - [Selamat Datang!](#selamat-datang)
 - [Panduan Penggunaan](#panduan-penggunaan)
 - [Berkontribusi](#berkontribusi)
@@ -25,6 +26,7 @@ Go (atau biasa disebut Golang) merupakan bahasa pemrograman *open source* yang d
 Golang adalah bahasa pemrograman prosedural yang didasari oleh bahasa C. Karena itu, kamu tidak akan menemukan konsep OOP (*Object Oriented Programming*) dalam bahasa ini serta terdapat kemiripan dengan bahasa C. Dalam segi kecepatan, Golang merupakan salah satu yang tercepat di antara bahasa lain. Saat ini, Golang adalah salah satu dari bahasa yang paling populer di antara para developer.
 
 > ### 💡 Baru belajar? Mulai dari [sini](basic/01_introduction/README.md)
+>
 > Kamu akan mempelajari dasar-dasar dari pemrograman dengan Golang
 
 Untuk mempermudah kamu dalam mempelajari Golang, kamu dapat mengikuti alur belajar berikut ini.
@@ -39,8 +41,7 @@ Untuk mempermudah kamu dalam mempelajari Golang, kamu dapat mengikuti alur belaj
 | 6 | Tipe Data Lanjutan | Memahami array. slice, map, dan struct secara mendalam serta mengetahui implementasinya dalam program |
 | 7 | Fungsi | Memahami konsep dasar fungsi serta macam-macam fungsi dalam Golang |
 | 8 | Pointer | Memahami peran pointer dalam Golang dan mengetahui kapan harus menggunakannya |
-| 9 | Method dan Interface | Mengetahui apa itu method dan interface beserta cara deklarasi dan implementasi keduanya  |
-
+| 9 | Method dan Interface | Mengetahui apa itu method dan interface beserta cara deklarasi dan implementasi keduanya |
 
 ## Panduan Penggunaan
 
@@ -51,7 +52,6 @@ Kamu dapat langsung menjelajahi folder-folder dalam repositori ini. Repositori i
 Bantuan kalian diperlukan! Untuk Bellshade dapat lebih jauh lagi membantu anak-anak Indonesia belajar *programming*, kita butuh tenaga kalian.
 
 > "Dengan Bellshade, aku jadi bisa ngoding! Terima kasih Bellshade!!"
-> 
 
 Kami sangat senang bila kalian ingin melakukan kontribusi pada repositori **Golang** ini. Tapi sebelum itu, silakan baca terlebih dahulu [peraturan dan pedoman](CONTRIBUTING.md) yang telah kami siapkan. Terima kasih!
 

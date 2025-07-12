@@ -19,12 +19,15 @@ type tipe_struct_variabel strcut{
     deifnisi member;
 }
 ```
+
 atau kita juga bisa menyingkatnya dengan cara
+
 ```golang
 nama_variabel := tipe_struktur {value1, value2, value3}
 ```
 
 ## mengakses anggota struct
+
 untuk mengakses setiap enggota struktur, kita menggunakan operator akses anggota (.). operator akses anggota dikodekan sebagai periode antara nama variabel struktur dan anggota struktur yang ingin kita akses.
 
 ```golang
