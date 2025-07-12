@@ -20,3 +20,23 @@ jobs:
         run: make test
       - name: unittesting dengan race-condition
         run: make test-race
+  windows_tests:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '^1.18'
+
+      - name: Run unit tests (PowerShell)
+        shell: pwsh
+        run: |
+          go test -v ./tests/...
+
+      - name: Run race detector (PowerShell)
+        shell: pwsh
+        run: |
+          go test -race ./tests/...
