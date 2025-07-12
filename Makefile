@@ -1,5 +1,6 @@
-EXCLUDE_FOLDER = "basic\|intermediate\|utilities"
-TEST_PACKAGE := $(shell go list ./... | grep -v $(EXCLUDE_FOLDER))
+# EXCLUDE_FOLDER = "basic\|intermediate\|utilities"
+# TEST_PACKAGE := $(shell go list ./... | grep -v $(EXCLUDE_FOLDER))
+TEST_PACKAGE := $(shell go list ./tests/...)
 
 .DEFAULT_GOAL := test
 

@@ -1,7 +1,9 @@
-package logaritma
+package math_implementation
 
 import (
 	"testing"
+
+	"github.com/bellshade/Golang/math_implementation/logaritma"
 )
 
 func TestLogBase32(t *testing.T) {
@@ -15,7 +17,7 @@ func TestLogBase32(t *testing.T) {
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			if dapat := LogBase2(test.n); dapat != test.want {
+			if dapat := logaritma.LogBase2(test.n); dapat != test.want {
 				t.Errorf("logBase2() = %v, harusnya %v", dapat, test.want)
 			}
 		})

@@ -3,6 +3,8 @@ package searching
 import (
 	"math"
 	"testing"
+
+	"github.com/bellshade/Golang/searching"
 )
 
 const EPS = 1e-6
@@ -12,7 +14,7 @@ func equal(a, b float64) bool {
 }
 
 func TestTernaryMax(t *testing.T) {
-	var tests = []struct {
+	tests := []struct {
 		f         func(x float64) float64
 		a         float64
 		b         float64
@@ -22,7 +24,7 @@ func TestTernaryMax(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		hasil, error := ternaryMaxSearching(test.a, test.b, EPS, test.f)
+		hasil, error := searching.TernaryMaxSearching(test.a, test.b, EPS, test.f)
 		if error != nil {
 			t.Errorf("error, data: `%v`", error)
 		}
@@ -34,7 +36,7 @@ func TestTernaryMax(t *testing.T) {
 }
 
 func TestTernaryMin(t *testing.T) {
-	var tests = []struct {
+	tests := []struct {
 		f         func(x float64) float64
 		a         float64
 		b         float64
@@ -45,7 +47,7 @@ func TestTernaryMin(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		hasil, error := ternaryMinSearching(test.a, test.b, EPS, test.f)
+		hasil, error := searching.TernaryMinSearching(test.a, test.b, EPS, test.f)
 		if error != nil {
 			t.Errorf("error, data: `%v`", error)
 		}

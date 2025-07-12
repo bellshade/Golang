@@ -1,6 +1,10 @@
-package armstrong
+package math_implementation
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/bellshade/Golang/math_implementation/armstrong"
+)
 
 var testCase = []struct {
 	name     string
@@ -37,7 +41,7 @@ var testCase = []struct {
 func TestArmstrong(t *testing.T) {
 	for _, test := range testCase {
 		t.Run(test.name, func(t *testing.T) {
-			funcResult := cekArmstrong(test.input)
+			funcResult := armstrong.CekArmstrong(test.input)
 			if test.expected != funcResult {
 				t.Errorf("expect jawaban '%t' untuk nomor '%d' tapi jawaban yang diberikan %t", test.expected, test.input, funcResult)
 			}

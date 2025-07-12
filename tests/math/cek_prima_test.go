@@ -1,7 +1,9 @@
-package prima
+package math_test
 
 import (
 	"testing"
+
+	"github.com/bellshade/Golang/math/prima"
 )
 
 func TestPembagianTrial(t *testing.T) {
@@ -17,7 +19,7 @@ func TestPembagianTrial(t *testing.T) {
 
 	for _, testingTest := range testingData {
 		t.Run(testingTest.name, func(t *testing.T) {
-			if getData := PembagianTrial(testingTest.n); getData != testingTest.ekspetasi {
+			if getData := prima.PembagianTrial(testingTest.n); getData != testingTest.ekspetasi {
 				t.Errorf("PembagianTrial(%v) = %v; ekspetasi %v", testingTest.n, getData, testingTest.ekspetasi)
 			}
 		})

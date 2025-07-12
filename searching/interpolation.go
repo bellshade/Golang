@@ -11,7 +11,7 @@ package searching
 // Return:
 // - indeks pertama dari nilai yang cocok
 // - error jika tidak ditemukan atau kondisi input tidak valid
-func pencarianInterpolasi(sortedData []int, tebakan int) (int, error) {
+func PencarianInterpolasi(sortedData []int, tebakan int) (int, error) {
 	// jika data kosong, langsung return error karena tidak ada data yang dicari
 	if len(sortedData) == 0 {
 		return -1, ErrorMessage

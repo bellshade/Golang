@@ -23,7 +23,7 @@ import (
 // Return:
 // float64 - nilai maks dari f(x) dalam unterval [a, b]
 // error - error jika input tidak valid atau terjadi masalah selama eksekusi
-func ternaryMaxSearching(a, b, epsilon float64, f func(x float64) float64) (float64, error) {
+func TernaryMaxSearching(a, b, epsilon float64, f func(x float64) float64) (float64, error) {
 	if a == math.Inf(-1) || b == math.Inf(1) {
 		return -1, fmt.Errorf("interval harus memiliki angka float64")
 	}
@@ -34,10 +34,10 @@ func ternaryMaxSearching(a, b, epsilon float64, f func(x float64) float64) (floa
 	kiri := (2*a + b) / 3
 	kanan := (a + 2*b) / 3
 	if f(kiri) < f(kanan) {
-		return ternaryMaxSearching(kiri, b, epsilon, f)
+		return TernaryMaxSearching(kiri, b, epsilon, f)
 	}
 
-	return ternaryMaxSearching(a, kanan, epsilon, f)
+	return TernaryMaxSearching(a, kanan, epsilon, f)
 }
 
 // ternaryMinSearching mencari nilai minimum lokal dari fungsi(x) dalam interval [a, b]
@@ -47,7 +47,7 @@ func ternaryMaxSearching(a, b, epsilon float64, f func(x float64) float64) (floa
 // - evaluasi nilai f(x) pada dua titik tengah: kiri dan kanan
 // - jika f(kiri) > f(kanan), maka nilai minimum berbeda di sisi kanan
 // proses berlanjut secara rekursif hingga interval lebih kecil dari epsilon
-func ternaryMinSearching(a, b, epsilon float64, f func(x float64) float64) (float64, error) {
+func TernaryMinSearching(a, b, epsilon float64, f func(x float64) float64) (float64, error) {
 	if a == math.Inf(-1) || b == math.Inf(1) {
 		return -1, fmt.Errorf("interval harus memiliki angka float64")
 	}
@@ -59,7 +59,7 @@ func ternaryMinSearching(a, b, epsilon float64, f func(x float64) float64) (floa
 	kiri := (2*a + b) / 3
 	kanan := (a + 2*b) / 3
 	if f(kiri) > f(kanan) {
-		return ternaryMinSearching(kiri, b, epsilon, f)
+		return TernaryMinSearching(kiri, b, epsilon, f)
 	}
-	return ternaryMinSearching(a, kanan, epsilon, f)
+	return TernaryMinSearching(a, kanan, epsilon, f)
 }

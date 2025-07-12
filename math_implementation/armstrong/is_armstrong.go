@@ -11,7 +11,7 @@ import (
 	"strconv"
 )
 
-func cekArmstrong(angka int) bool {
+func CekArmstrong(angka int) bool {
 	var digit_kanan int
 	var sum int = 0
 	var tempNum int = angka

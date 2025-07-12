@@ -11,7 +11,7 @@ package searching
 // Return:
 // - int: indeks pertama tempat query ditemukan
 // - error: jika query tidak ditemukan, maka throw error
-func linearSearching(array []int, query int) (int, error) {
+func LinearSearching(array []int, query int) (int, error) {
 	// melakukan iterasi terhadap array menggunakan array
 	// dimana `i` adalah indeks dan `item` adalah nilai pada posisi tersebut
 	for i, item := range array {
