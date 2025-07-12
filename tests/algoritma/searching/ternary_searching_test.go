@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/bellshade/Golang/searching"
+	"github.com/bellshade/Golang/algoritma/searching"
 )
 
 const EPS = 1e-6
