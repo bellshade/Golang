@@ -19,7 +19,7 @@ Saya menggunakan (I'm using):
 
 - ``os`` = ``linux / windows / macOS``
 - ``Go version`` = ``go version``
-<!-- Kami menggunakan Python versi 3 dan tidak menyarankan untuk menggunakan Python 2. -->
+<!-- Kami menggunakan Golang versi ^1.24 dan tidak menyarankan untuk menggunakan versi yang lebih rendah karena alasan kompatibilitas dan fitur terbaru. -->
 
 <!-- Jika ada gagal pada salah satu test, kami akan mengeceknya kembali. -->
 <!-- If there is a failure in one of the tests, we will check it again. -->
