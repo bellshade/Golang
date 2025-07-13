@@ -12,7 +12,7 @@ import (
 )
 
 func CekArmstrong(angka int) bool {
-	var digit_kanan int
+	var digitKanan int
 	var sum int = 0
 	var tempNum int = angka
 
@@ -24,8 +24,8 @@ func CekArmstrong(angka int) bool {
 	// setelah semua digit diulang
 
 	for tempNum > 0 {
-		digit_kanan = tempNum % 10
-		sum += int(math.Pow(float64(digit_kanan), length))
+		digitKanan = tempNum % 10
+		sum += int(math.Pow(float64(digitKanan), length))
 
 		// perbarui digit input dikurangi yang diproses
 		// paling kanan
