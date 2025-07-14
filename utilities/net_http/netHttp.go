@@ -27,9 +27,9 @@ func loggingMiddleware(next http.HandlerFunc) http.HandlerFunc {
 func main() {
 	http.HandleFunc("/", loggingMiddleware(homeHandler))
 	http.HandleFunc("/about", loggingMiddleware(aboutHandler))
-	fmt.Println("server berjalan di http://localhost:8080")
+	fmt.Println("server berjalan di http://localhost:8443")
 
-	err := http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServeTLS(":8443", "cert.perm", "key.perm", nil)
 	if err != nil {
 		panic(err)
 	}

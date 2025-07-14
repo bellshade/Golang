@@ -51,9 +51,9 @@ kita bisa mencoba dengan menggunakan fungsi `http.HandleFunc(...)` untuk menghub
 http.HandleFunc("/", loggingMiddleware(homeHandler))
 http.HandleFunc("/about", loggingMiddleware(aboutHandler))
 
-fmt.Println("server berjalan dengan http://localhost:8080")
+fmt.Println("server berjalan dengan http://localhost:8443")
 ```
 ketika dijalankan output akan
 ```
-server berjalan dengan http://localhost:8080
+server berjalan dengan http://localhost:8443
 ```
