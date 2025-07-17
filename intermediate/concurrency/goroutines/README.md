@@ -351,3 +351,84 @@ mari bedah kode diatas satu persatu :
 - **wg.Done()** : Pada akhir setiap goroutine, perintah ini mengurangkan nilai hitung di `WaitGroup` menggunakan metode `Done()`, menandakan bahwa goroutine tersebut telah selesai.
 - **wg.Add(1)** dan **go worker(i, &wg)**: Dalam loop `for`, setiap iterasi menambahkan 1 ke hitungan `WaitGroup` dengan `wg.Add(1)` sebelum goroutine dimulai. Ini memastikan bahwa `WaitGroup` mengetahui bahwa ada goroutine yang harus selesai.
 - **wg.Wait()**: Di dalam `main` function, `wg.Wait()` akan menunggu hingga semua goroutine yang telah dimulai selesai dieksekusi. Ini memastikan bahwa program tidak akan melanjutkan eksekusi lebih jauh sampai semua goroutine selesai.
+
+# Atomic di Golang
+
+## Apa itu Atomic?
+
+`Atomic` adalah cara untuk **mengelola akses terhadap variabel bersama (shared variable)** secara aman dalam lingkungan **concurrent** (misalnya saat menggunakan banyak `goroutine`), tanpa harus menggunakan `Mutex`.
+
+Dengan `atomic`, kita bisa memodifikasi nilai dari sebuah variabel secara **atomik** — artinya operasi tersebut tidak akan terpotong atau konflik dengan operasi lain. Ini sangat berguna untuk mencegah **race condition**.
+
+---
+
+
+Contoh program dengan atomic:
+
+```go
+	var total int64
+	for range 10000 {
+		atomic.AddInt64(&total3, 1) 
+		// total = total + 1
+	}
+```
+
+## Menghindari Race Condition di Golang: Atomic vs Mutex
+
+Dalam pemrograman konkuren, **race condition** terjadi ketika dua atau lebih goroutine mengakses dan memodifikasi variabel yang sama secara bersamaan tanpa sinkronisasi yang tepat. Hal ini menyebabkan hasil akhir yang tidak konsisten atau tidak dapat diprediksi.
+
+Golang menyediakan beberapa cara untuk menangani race condition:
+- **Tanpa sinkronisasi (raw access - berbahaya)**
+- **Dengan `sync.Mutex` (penguncian eksplisit)**
+- **Dengan `sync/atomic` (operasi atomik)**
+
+---
+
+### Contoh Kasus Lengkap
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+	"sync/atomic"
+	"time"
+)
+
+func main() {
+	var total1 int64
+
+	// 1. Tanpa sinkronisasi - berpotensi race condition
+	for range 10000 {
+		go func() {
+			total1++ // tidak aman
+		}()
+	}
+
+	// 2. Dengan Mutex - penguncian eksplisit
+	var total2 int64
+	mx := sync.Mutex{}
+	for range 10000 {
+		go func() {
+			mx.Lock()
+			total2++
+			mx.Unlock()
+		}()
+	}
+
+	// 3. Dengan Atomic - aman untuk operasi sederhana
+	var total3 int64
+	for range 10000 {
+		go func() {
+			atomic.AddInt64(&total3, 1)
+		}()
+	}
+
+	time.Sleep(2 * time.Second)
+
+	fmt.Printf("tidak melakukan locking, hasil `total`: %d \n", total1)
+	fmt.Printf("melakukan locking dengan mutex. hasil  `total`: %d \n", total2)
+	fmt.Printf("melakuakn locking dengan atomic, hasil total: %d \n", total3)
+}
+```
