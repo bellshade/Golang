@@ -7,7 +7,7 @@ Analogi sederhana untuk memahami konsep *concurrency* adalah proses memasak. Mis
 
 Proses memasak di atas divisualisasikan pada diagram berikut
 
-![councrrency_example](assets\concucrrency_example.png)
+![councrrency_example](./assets/concucrrency_example.png)
 
 Pada diagram di atas, ada beberapa proses yang diwakilkan oleh persegi panjang dengan warna *border*, yaitu proses yang berhubungan dengan Telur, Sosis, dan Mi. Dalam *concurrency*, proses-proses tersebut dikenal dengan istilah *routine*. Seluruh proses memasak tersebut dilakukan dalam satu kompor yang sama dengan asumsi kompor yang digunakan memiliki tempat memasak yang banyak. Dalam *concurrency*, tempat memasak pada kompor tersebut dikenal dengan istilah *thread*
 # Goroutine
@@ -137,7 +137,7 @@ Ketika kita menjalankan kode di atas, kita akan mendapat *output* sebagai beriku
 
 Visualisasi dari hasil di atas adalah sebagai berikut.
 
-![councrrency_example2](assets\Goroutines-explained.png).
+![councrrency_example2](./assets/Goroutines-explained.png).
 
 Seperti kita lihat pada gambar di atas, perintah `time.Sleep(3000 * time.Millisecond)` digunakan untuk menunggu goroutine `go alphabets()` dan `go numbers()` selesai dieksekusi. 
 
