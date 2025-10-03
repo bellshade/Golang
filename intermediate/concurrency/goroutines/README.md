@@ -149,11 +149,69 @@ Selanjutnya, mari kita perhatikan goroutine `go alphabets()` dan `go numbers()`.
 ## Mendeklarasikan Channel
 Berikut cara mendeklarasikan, mengirim dan menerima data dari channel (kode diambil dari [https://golangbot.com/channels/](https://golangbot.com/channels/))
 
+### unbuffered channel
 ```Go
 a := make(chan int) // mendeklarasikan channel dengan tipe data integer
+```
 
-data := <- a // mengirim data dari channel a dan menyimpan hasilnya ke dalam variabel data
-a <- data // channel a menerima data dari variabel data
+### buffered channel
+channel juga dapat memiliki kapasitas (buffered), cukup dengan menspesifikasikan kapasitas/panjang data pada argument kedua fungsi make()
+```go
+// buffered channel dengan kapasitas 10
+b := make(chan int, 10)
+```
+
+buffered channel dapat digunakan untuk proses asinkron dimana data dapat disimpan dahulu hingga kapasitas penuh sebelum dikonsumsi goroutine lain.
+
+## Range dan close
+Pengirim dapat menutup (close) channel untuk mengindikasikan bahwa tidak ada lagi value yang akan dikirim. Penerima dapat mengecek apakah channel sudah ditutup dengan meng-*assign* argumen kedua. [sumber](https://go.dev/tour/concurrency/4)
+```go
+v, ok := <-a
+```
+ok adalah false jika tidak ada lagi value yang diterima dan channel ditutup 
+
+channel juga dapat diiterasi menggunakan for loop:
+
+```go
+for val := range a 
+```
+ia menerima value dari channel secara terus menerus hingga channel ditutup
+
+## data flow
+Seperti terlihat pada contoh code sebelumnya, dapat dilihat bahwa data pada channel mengalir berdasarkan arah panah 
+
+### contoh
+```go
+chan1 := make(chan int)
+num := 1
+chan1 <- num // chan1 menerima (receive) data dari variabel num
+var out int
+out := <- chan1 // chan1 mengirim (send) data ke variabel out
+```
+
+### contoh data flow data channel pada parameter fungsi
+```go
+// contoh fungsi dengan parameter channel yang hanya menerima data channel
+func terima(data <-chan int) {
+	receive := <-data
+    num := 1
+	fmt.Printf("%d\n", receive)
+}
+
+// contoh fungsi dengan parameter channel yang hanya mengirim data ke channel
+func kirim(data chan<- int) {
+	num := 1
+	data <- num 
+	close(data) 
+	// NOTE: channel sebaiknya ditutup dari sisi pengirim
+	// untuk menghindari goroutine penerima menunggu terus (deadlock)
+}
+
+// contoh fungsi dengan parameter channel yang dapat mengirim maupun menerima data pada channel (bidirectional)
+func duaArrah(dataChan chan int) {
+	num := <-dataChan
+	dataChan <- num
+}
 ```
 
 ## Contoh Penggunaan Channel
