@@ -35,10 +35,11 @@ func ConstructorRedis(redisConnection *redis.Client) redisCrud {
 func (r *rds) RedisGet(ctx context.Context, key string) (any, error) { 
 	// Keyword Syntax = Get
 	result, err := r.rdsConnection.Get(ctx, key).Result() // Menggunakan method Result supaya mengembalikan string dan err
+	if err == redis.Nil {
+		return nil, fmt.Errorf("key tersebut tidak ada didalam redis") // Kembalikan pesan jika key tidak ada di redis
+	}
 	if err != nil {
 		return nil, fmt.Errorf("terjadi error saat redis_get: %w", err) // Kembalikan error jika ada
-	} else if err == redis.Nil {
-		return nil, fmt.Errorf("key tersebut tidak ada didalam redis") // Kembalikan pesan jika key tidak ada di redis
 	}
 	return result, nil
 }
